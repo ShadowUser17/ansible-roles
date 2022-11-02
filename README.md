@@ -25,5 +25,5 @@ python3 -m venv --upgrade-deps .env
 
 #### Test Playbook:
 ```bash
-./.env/bin/ansible-playbook -C -i <inventory>
+./.env/bin/ansible-playbook -i <inventory> -C <playbook>
 ```
