@@ -1,0 +1,39 @@
+---
+- name: "Install dependencies..."
+  apt:
+    pkg:
+      - "apt-transport-https"
+      - "ca-certificates"
+      - "lsb-release"
+      - "gnupg"
+      - "curl"
+    state: "present"
+    update_cache: true
+  tags:
+    - "docker"
+
+- name: "Add GPG key..."
+  apt_key:
+    url: "https://download.docker.com/linux/debian/gpg"
+    state: "present"
+  tags:
+    - "docker"
+
+- name: "Add repository..."
+  apt_repository:
+    repo: "deb https://download.docker.com/linux/debian {{ lsb_release }} stable"
+    state: "present"
+  tags:
+    - "docker"
+
+- name: "Install Docker..."
+  apt:
+    pkg:
+      - "containerd.io"
+      - "docker-ce"
+      - "docker-ce-cli"
+      - "docker-compose-plugin"
+    state: "present"
+    update_cache: true
+  tags:
+    - "docker"
