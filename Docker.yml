@@ -1,5 +1,5 @@
 ---
-- hosts: "debian"
+- hosts: "vm-testing"
   name: "Install Docker"
   roles:
     - "docker"

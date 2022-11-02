@@ -7,3 +7,8 @@ all:
     debian:
       hosts:
         vm-testing:
+        vm-storage:
+    fedora:
+      hosts:
+        vm-k3s-server:
+        vm-k3s-agent:
