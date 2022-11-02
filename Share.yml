@@ -1,0 +1,5 @@
+---
+- hosts: "fedora"
+  name: "Configure shares..."
+  roles:
+    - "nfs"

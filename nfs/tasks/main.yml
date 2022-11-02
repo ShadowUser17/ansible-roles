@@ -1,0 +1,49 @@
+---
+- name: "Install packages for DEB..."
+  apt:
+    pkg: "nfs-kernel-server"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "nfs"
+  when:
+    - "ansible_facts['os_family']|lower == 'debian'"
+
+- name: "Install packages for RPM..."
+  dnf:
+    name: "nfs-utils"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "nfs"
+  when:
+    - "ansible_facts['os_family']|lower == 'redhat'"
+
+- name: "Create nfs directory..."
+  file:
+    path: "{{ nfs_path }}"
+    state: "directory"
+    owner: "nobody"
+    group: "nobody"
+    mode: "1777"
+  tags:
+    - "nfs"
+
+- name: "Create nfs exports..."
+  template:
+    src: "exports.j2"
+    dest: "/etc/exports"
+    force: true
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  tags:
+    - "nfs"
+
+- name: "Enable nfs service..."
+  systemd:
+    name: "nfs-server"
+    state: "started"
+    enabled: yes
+  tags:
+    - "nfs"
