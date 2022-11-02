@@ -13,6 +13,11 @@ python3 -m venv --upgrade-deps .env
 ./.env/bin/ansible-config init --disabled > ansible.cfg.example
 ```
 
+#### Get VM info:
+```bash
+./.env/bin/ansible -i <inventory> -m 'gather_facts' <hosts>
+```
+
 #### New empty role:
 ```bash
 ./.env/bin/ansible-galaxy role init <role>

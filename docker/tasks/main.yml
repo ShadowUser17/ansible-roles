@@ -11,6 +11,8 @@
     update_cache: true
   tags:
     - "docker"
+  when:
+    - "ansible_facts['os_family']|lower == 'debian'"
 
 - name: "Add GPG key..."
   apt_key:
@@ -18,6 +20,8 @@
     state: "present"
   tags:
     - "docker"
+  when:
+    - "ansible_facts['os_family']|lower == 'debian'"
 
 - name: "Add repository..."
   apt_repository:
@@ -25,6 +29,8 @@
     state: "present"
   tags:
     - "docker"
+  when:
+    - "ansible_facts['os_family']|lower == 'debian'"
 
 - name: "Install Docker..."
   apt:
@@ -37,3 +43,5 @@
     update_cache: true
   tags:
     - "docker"
+  when:
+    - "ansible_facts['os_family']|lower == 'debian'"

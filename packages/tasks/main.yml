@@ -1,21 +1,8 @@
 ---
-- name: "Update all packages..."
-  dnf:
-    name: "*"
-    state: "latest"
-    update_cache: yes
-  tags:
-    - "update-all"
+- import_tasks: "fedora.yml"
+  when:
+    - "ansible_facts['os_family']|lower == 'redhat'"
 
-- name: "Install base packages..."
-  dnf:
-    name:
-      - "git"
-      - "htop"
-      - "ncdu"
-      - "unzip"
-      - "tcpdump"
-    state: "present"
-    update_cache: yes
-  tags:
-    - "install-base"
+- import_tasks: "debian.yml"
+  when:
+    - "ansible_facts['os_family']|lower == 'debian'"

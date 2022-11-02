@@ -1,0 +1,23 @@
+---
+- name: "Update all packages for RPM..."
+  dnf:
+    name: "*"
+    state: "latest"
+    update_cache: yes
+  tags:
+    - "update-all"
+
+- name: "Install base packages for RPM..."
+  dnf:
+    name:
+      - "git"
+      - "curl"
+      - "htop"
+      - "ncdu"
+      - "unzip"
+      - "tcpdump"
+      - "bash-completion"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "install-base"
