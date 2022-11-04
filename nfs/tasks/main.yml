@@ -33,7 +33,7 @@
   template:
     src: "exports.j2"
     dest: "/etc/exports"
-    force: true
+    force: yes
     owner: "root"
     group: "root"
     mode: "0644"
