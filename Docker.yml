@@ -1,5 +1,6 @@
 ---
-- hosts: "vm-testing"
+- hosts: "testing"
   name: "Install Docker"
+  become: true
   roles:
     - "docker"

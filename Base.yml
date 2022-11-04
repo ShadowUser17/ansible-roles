@@ -1,5 +1,6 @@
 ---
 - hosts: "all"
   name: "Prepare VM"
+  become: true
   roles:
     - "packages"

@@ -1,14 +1,12 @@
 ---
 all:
   vars:
-    ansible_user: "root"
+    ansible_user: "vagrant"
     ansible_port: 22
   children:
-    debian:
+    main:
       hosts:
-        vm-testing:
-        vm-storage:
-    fedora:
+        testing:
+    k3s:
       hosts:
-        vm-k3s-server:
-        vm-k3s-agent:
+        k3s-server:
