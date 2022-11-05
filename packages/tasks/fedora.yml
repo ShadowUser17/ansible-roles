@@ -12,6 +12,7 @@
     name:
       - "git"
       - "curl"
+      - "tmux"
       - "htop"
       - "ncdu"
       - "unzip"
