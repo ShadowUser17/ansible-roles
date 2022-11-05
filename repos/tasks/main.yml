@@ -1,0 +1,11 @@
+---
+- name: "Clone DockerTemplates repo..."
+  git:
+    repo: "https://github.com/ShadowUser17/DockerTemplates.git"
+    dest: "/root/templates"
+    version: "master"
+    clone: yes
+    force: yes
+  tags:
+    - "docker"
+    - "repos"
