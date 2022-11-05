@@ -5,7 +5,7 @@
     state: "latest"
     update_cache: yes
   tags:
-    - "update-all"
+    - "update"
 
 - name: "Install base packages for DEB..."
   apt:
@@ -21,7 +21,7 @@
     state: "present"
     update_cache: yes
   tags:
-    - "install-base"
+    - "bootstrap"
 
 - name: "Install python packages for DEB..."
   apt:

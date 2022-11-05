@@ -1,4 +1,4 @@
 #### Available tags:
-- update-all
-- install-base
+- update
+- bootstrap
 - python-env

@@ -4,7 +4,7 @@
     url: "https://github.com/containerd/nerdctl/releases/download/v{{ app_version }}/nerdctl-{{ app_version }}-linux-amd64.tar.gz"
     dest: "{{ app_file }}"
   tags:
-    - "install-app"
+    - "nerdctl"
 
 - name: "Extract nerdctl archive..."
   unarchive:
@@ -15,7 +15,7 @@
     keep_newer: yes
     remote_src: yes
   tags:
-    - "install-app"
+    - "nerdctl"
 
 - name: "Create nerdctl directory..."
   file:
@@ -25,7 +25,7 @@
     group: "root"
     mode: "0755"
   tags:
-    - "install-app"
+    - "nerdctl"
 
 - name: "Create nerdctl config..."
   template:
@@ -36,4 +36,4 @@
     group: "root"
     mode: "0644"
   tags:
-    - "install-app"
+    - "nerdctl"

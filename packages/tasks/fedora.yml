@@ -5,7 +5,7 @@
     state: "latest"
     update_cache: yes
   tags:
-    - "update-all"
+    - "update"
 
 - name: "Install base packages for RPM..."
   dnf:
@@ -21,4 +21,4 @@
     state: "present"
     update_cache: yes
   tags:
-    - "install-base"
+    - "bootstrap"
