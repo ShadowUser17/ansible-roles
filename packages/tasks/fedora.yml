@@ -15,6 +15,7 @@
       - "tmux"
       - "htop"
       - "ncdu"
+      - "tree"
       - "unzip"
       - "tcpdump"
       - "bash-completion"
