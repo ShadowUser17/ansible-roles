@@ -1,0 +1,16 @@
+---
+- name: "Create user..."
+  user:
+    name: "{{ ssh_user }}"
+    shell: "/bin/bash"
+    state: "present"
+  tags:
+    - "user"
+
+- name: "Add ssh key..."
+  authorized_key:
+    user: "{{ ssh_user }}"
+    key: "{{ lookup('file', ssh_file) }}"
+    state: "present"
+  tags:
+    - "ssh"

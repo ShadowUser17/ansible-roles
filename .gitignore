@@ -2,3 +2,6 @@
 *.pem
 *.pub
 *.example
+
+Test.yml
+testing

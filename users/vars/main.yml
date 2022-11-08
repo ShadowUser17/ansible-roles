@@ -1,0 +1,3 @@
+---
+ssh_user: "vagrant"
+ssh_file: "./vm_ssh_key.pub"
