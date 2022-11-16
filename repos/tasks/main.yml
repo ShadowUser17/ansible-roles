@@ -1,11 +1,13 @@
 ---
 - name: "Clone DockerTemplates repo..."
   git:
-    repo: "https://github.com/ShadowUser17/DockerTemplates.git"
+    repo: "git@github.com:ShadowUser17/DockerTemplates.git"
     dest: "/root/templates"
     version: "master"
-    clone: yes
     force: yes
+    clone: yes
+    key_file: "~/.ssh/git_ssh_key"
+    accept_hostkey: yes
   tags:
     - "docker"
     - "repos"
