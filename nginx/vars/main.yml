@@ -1,0 +1,4 @@
+---
+nginx_site_path: "/etc/nginx/conf.d"
+nginx_cert_path: "/etc/nginx/certs"
+nginx_user: "nginx"
