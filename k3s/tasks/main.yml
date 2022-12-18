@@ -1,1 +1,7 @@
 ---
+- import_tasks: "k3s.yml"
+  when:
+    - "ansible_facts['os_family']|lower == 'debian'"
+
+- import_tasks: "flux.yml"
+- import_tasks: "kubectl.yml"

@@ -1,0 +1,40 @@
+---
+- name: "Download k3s script..."
+  get_url:
+    url: "https://get.k3s.io"
+    dest: "{{ k3s_file }}"
+    mode: "0755"
+  tags:
+    - "k3s"
+
+- name: "Install k3s server..."
+  shell: |
+    INSTALL_K3S_CHANNEL="{{ k3s_version }}" {{ k3s_file }} server \
+    --token "{{ k3s_token }}" \
+    --node-name "{{ k3s_node }}" \
+    --with-node-id \
+    --disable-helm-controller \
+    --disable "traefik"
+  tags:
+    - "k3s"
+
+- name: "Create .kube directory..."
+  file:
+    path: "/root/.kube"
+    state: "directory"
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "k3s_config"
+
+- name: "Configure kubectl..."
+  copy:
+    src: "/etc/rancher/k3s/k3s.yaml"
+    dest: "/root/.kube/config"
+    remote_src: true
+    owner: "root"
+    group: "root"
+    mode: "0600"
+  tags:
+    - "k3s_config"

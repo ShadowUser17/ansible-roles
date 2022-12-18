@@ -1,3 +1,10 @@
 ---
 k3s_version: "v1.23.14+k3s1"
+k3s_file: "/root/get-k3s.sh"
+k3s_node: "k3s"
+k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
+
 flux_version: "0.37.0"
+flux_file: "/root/flux_linux_amd64.tgz"
+
+kube_version: "1.23.14"

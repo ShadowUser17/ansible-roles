@@ -7,6 +7,9 @@ all:
     main:
       hosts:
         testing:
+    test:
+      hosts:
+        k3s-single:
     k3s:
       hosts:
         k3s-server:

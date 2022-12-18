@@ -1,0 +1,6 @@
+---
+- hosts: "test"
+  name: "Install K3S"
+  become: true
+  roles:
+    - "k3s"
