@@ -14,6 +14,8 @@
     include: ["flux"]
     keep_newer: yes
     remote_src: yes
+    owner: "root"
+    group: "root"
   tags:
     - "flux"
 
