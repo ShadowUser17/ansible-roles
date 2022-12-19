@@ -8,3 +8,4 @@ flux_version: "0.37.0"
 flux_file: "/root/flux_linux_amd64.tgz"
 
 kube_version: "1.23.14"
+kube_file: "/usr/local/bin/kubectl"

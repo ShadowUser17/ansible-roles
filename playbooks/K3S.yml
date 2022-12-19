@@ -5,3 +5,4 @@
   roles:
     - "k3s"
     - "nerdctl"
+    - "k3s_tools"

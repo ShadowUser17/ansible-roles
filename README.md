@@ -1,11 +1,11 @@
 ### Roles for my testing stand...
 
-#### Install Ansible:
+#### Install/Upgrade Ansible:
 ```bash
 python3 -m venv --upgrade-deps .env
 ```
 ```bash
-./.env/bin/pip3 install ansible
+./.env/bin/pip3 install --upgrade ansible ansible-lint
 ```
 
 #### Get example config:

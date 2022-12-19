@@ -1,0 +1,21 @@
+---
+- name: "Download datree archive..."
+  get_url:
+    url: "https://github.com/datreeio/datree/releases/download/{{ datree }}/datree-cli_{{ datree }}_Linux_x86_64.zip"
+    dest: "{{ datree_file }}"
+    mode: "0644"
+  tags:
+    - "datree"
+
+- name: "Extract datree archive..."
+  unarchive:
+    src: "{{ datree_file }}"
+    dest: "/usr/local/bin/"
+    include: ["datree"]
+    keep_newer: yes
+    remote_src: yes
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "datree"

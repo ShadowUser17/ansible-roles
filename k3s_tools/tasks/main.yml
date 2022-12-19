@@ -1,1 +1,4 @@
 ---
+- import_tasks: "helm.yml"
+- import_tasks: "datree.yml"
+- import_tasks: "kubescape.yml"

@@ -1,0 +1,36 @@
+---
+- name: "Download helm archive..."
+  get_url:
+    url: "https://get.helm.sh/helm-v{{ helm }}-linux-amd64.tar.gz"
+    dest: "{{ helm_file }}"
+    mode: "0644"
+  tags:
+    - "helm"
+
+- name: "Extract helm archive..."
+  unarchive:
+    src: "{{ helm_file }}"
+    dest: "/tmp/"
+    include: ["linux-amd64/helm"]
+    keep_newer: yes
+    remote_src: yes
+  tags:
+    - "helm"
+
+- name: "Copy helm file..."
+  copy:
+    src: "/tmp/linux-amd64/helm"
+    dest: "/usr/local/bin/"
+    remote_src: true
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "helm"
+
+- name: "Remove tmp file..."
+  file:
+    path: "/tmp/linux-amd64/helm"
+    state: "absent"
+  tags:
+    - "helm"
