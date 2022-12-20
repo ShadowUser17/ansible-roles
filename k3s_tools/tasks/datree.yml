@@ -6,6 +6,7 @@
     mode: "0644"
   tags:
     - "datree"
+    - "k3s_tools"
 
 - name: "Extract datree archive..."
   unarchive:
@@ -19,3 +20,4 @@
     mode: "0755"
   tags:
     - "datree"
+    - "k3s_tools"

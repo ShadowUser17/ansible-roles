@@ -6,6 +6,7 @@
     mode: "0644"
   tags:
     - "helm"
+    - "k3s_tools"
 
 - name: "Extract helm archive..."
   unarchive:
@@ -16,6 +17,7 @@
     remote_src: yes
   tags:
     - "helm"
+    - "k3s_tools"
 
 - name: "Copy helm file..."
   copy:
@@ -27,6 +29,7 @@
     mode: "0755"
   tags:
     - "helm"
+    - "k3s_tools"
 
 - name: "Remove tmp file..."
   file:
@@ -34,3 +37,4 @@
     state: "absent"
   tags:
     - "helm"
+    - "k3s_tools"

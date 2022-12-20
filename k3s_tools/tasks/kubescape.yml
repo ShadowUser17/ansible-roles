@@ -8,3 +8,4 @@
     mode: "0755"
   tags:
     - "kubescape"
+    - "k3s_tools"
