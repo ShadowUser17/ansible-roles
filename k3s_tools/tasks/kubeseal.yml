@@ -1,0 +1,23 @@
+---
+- name: "Download kubeseal archive..."
+  get_url:
+    url: "https://github.com/bitnami-labs/sealed-secrets/releases/download/v{{ kubeseal }}/kubeseal-{{ kubeseal }}-linux-amd64.tar.gz"
+    dest: "{{ kubeseal_file }}"
+    mode: "0644"
+  tags:
+    - "kubeseal"
+    - "k3s_tools"
+
+- name: "Extract kubeseal archive..."
+  unarchive:
+    src: "{{ kubeseal_file }}"
+    dest: "/usr/local/bin/"
+    include: ["kubeseal"]
+    keep_newer: yes
+    remote_src: yes
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "kubeseal"
+    - "k3s_tools"
