@@ -1,5 +1,5 @@
 ---
-- hosts: "test"
+- hosts: "k3s_servers"
   name: "Install K3S"
   become: true
   roles:
