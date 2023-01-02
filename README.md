@@ -5,7 +5,7 @@
 python3 -m venv --upgrade-deps .env
 ```
 ```bash
-./.env/bin/pip3 install --upgrade ansible ansible-lint
+./.env/bin/pip3 install ansible==5.3.0
 ```
 
 #### Get example config:
