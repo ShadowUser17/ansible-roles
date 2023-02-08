@@ -4,7 +4,7 @@ k3s_file: "/root/get-k3s.sh"
 k3s_node: "k3s"
 k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
 
-flux_version: "0.38.3"
+flux_version: "0.40.1"
 flux_file: "/root/flux_linux_amd64.tgz"
 
 kube_version: "1.23.16"
