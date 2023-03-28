@@ -1,0 +1,11 @@
+---
+- name: "Download kubeshark archive..."
+  get_url:
+    url: "https://github.com/kubeshark/kubeshark/releases/download/{{ kubeshark }}/kubeshark_linux_amd64"
+    dest: "{{ kubeshark_file }}"
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "kubeshark"
+    - "k3s_tools"

@@ -2,6 +2,7 @@
 - helm
 - datree
 - kubeseal
+- kubeshark
 - kubescape
 - k3s_tools
 
@@ -9,4 +10,5 @@
 - helm
 - datree
 - kubeseal
+- kubeshark
 - kubescape
