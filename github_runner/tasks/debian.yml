@@ -35,7 +35,7 @@
 - name: "Configure runner..."
   remote_user: "{{ runner_user }}"
   shell:
-    cmd: "sudo -u {{ runner_user }} /bin/bash config.sh --disableupdate --unattended --url \"{{ runner_repo_url }}\" --token \"{{ runner_repo_key }}\""
+    cmd: "sudo -u {{ runner_user }} /bin/bash config.sh --disableupdate --unattended --name \"{{ runner_name }}\" --url \"{{ runner_repo_url }}\" --token \"{{ runner_repo_key }}\""
     chdir: "{{ runner_base_dir }}/{{ runner_user }}"
   tags:
     - "github_runner"
