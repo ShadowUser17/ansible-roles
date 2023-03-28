@@ -1,0 +1,61 @@
+---
+- name: "Create user..."
+  user:
+    name: "{{ runner_user }}"
+    home: "{{ runner_base_dir }}/{{ runner_user }}"
+    shell: "/sbin/nologin"
+    groups: "docker"
+    create_home: yes
+    system: yes
+    state: "present"
+  tags:
+    - "github_runner"
+
+- name: "Download archive..."
+  get_url:
+    url: "https://github.com/actions/runner/releases/download/v{{ runner_version }}/actions-runner-linux-x64-{{ runner_version }}.tar.gz"
+    dest: "{{ runner_base_dir }}/{{ runner_user }}/{{ runner_file }}"
+    owner: "{{ runner_user }}"
+    group: "{{ runner_user }}"
+    mode: "0644"
+  tags:
+    - "github_runner"
+
+- name: "Extract archive..."
+  unarchive:
+    src: "{{ runner_base_dir }}/{{ runner_user }}/{{ runner_file }}"
+    dest: "{{ runner_base_dir }}/{{ runner_user }}/"
+    owner: "{{ runner_user }}"
+    group: "{{ runner_user }}"
+    keep_newer: yes
+    remote_src: yes
+  tags:
+    - "github_runner"
+
+- name: "Configure runner..."
+  remote_user: "{{ runner_user }}"
+  shell:
+    cmd: "sudo -u {{ runner_user }} /bin/bash config.sh --disableupdate --unattended --url \"{{ runner_repo_url }}\" --token \"{{ runner_repo_key }}\""
+    chdir: "{{ runner_base_dir }}/{{ runner_user }}"
+  tags:
+    - "github_runner"
+
+- name: "Create service..."
+  template:
+    src: "runner.service.j2"
+    dest: "/etc/systemd/system/github-runner.service"
+    force: yes
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  tags:
+    - "github_runner"
+
+- name: "Enable service..."
+  systemd:
+    name: "github-runner"
+    daemon_reload: yes
+    enabled: yes
+    state: "started"
+  tags:
+    - "github_runner"

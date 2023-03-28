@@ -1,0 +1,15 @@
+[Unit]
+Description=github-runner
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User={{ runner_user }}
+Group={{ runner_user }}
+Type=simple
+Restart=on-failure
+WorkingDirectory={{ runner_base_dir }}/{{ runner_user }}
+ExecStart={{ runner_base_dir }}/{{ runner_user }}/run.sh
+
+[Install]
+WantedBy=multi-user.target
