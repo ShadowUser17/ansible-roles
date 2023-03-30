@@ -1,0 +1,3 @@
+---
+node_release: "18"
+node_file: "/root/add-node-repo.sh"

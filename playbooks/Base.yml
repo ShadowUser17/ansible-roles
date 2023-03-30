@@ -5,4 +5,5 @@
   roles:
     - "packages"
     - "configs"
+    - "nodejs"
     - "nerdctl"

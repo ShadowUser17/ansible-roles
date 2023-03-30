@@ -1,0 +1,21 @@
+---
+- name: "Download node script..."
+  get_url:
+    url: "https://rpm.nodesource.com/setup_{{ node_release }}.x"
+    dest: "{{ node_file }}"
+    mode: "0755"
+  tags:
+    - "nodejs"
+
+- name: "Add node repository..."
+  shell: "{{ node_file }}"
+  tags:
+    - "nodejs"
+
+- name: "Install node..."
+  dnf:
+    name: "nodejs"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "nodejs"
