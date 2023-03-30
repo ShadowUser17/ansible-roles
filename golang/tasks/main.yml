@@ -1,0 +1,15 @@
+---
+- name: "Install gobrew..."
+  get_url:
+    url: "https://github.com/kevincobain2000/gobrew/releases/download/v{{ gobrew_version }}/gobrew-linux-amd64"
+    dest: "{{ gobrew_file }}"
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "gobrew"
+
+- name: "Install golang..."
+  shell: "gobrew install {{ go_version }} && gobrew use {{ go_version }}"
+  tags:
+    - "golang"
