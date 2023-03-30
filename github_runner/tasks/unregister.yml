@@ -1,0 +1,16 @@
+---
+- name: "Disable service..."
+  systemd:
+    name: "github-runner"
+    state: "stopped"
+    enabled: false
+  tags:
+    - "runner_unregister"
+
+- name: "Unregister runner..."
+  remote_user: "{{ runner_user }}"
+  shell:
+    cmd: "sudo -u {{ runner_user }} /bin/bash config.sh remove --token \"{{ runner_repo_key }}\""
+    chdir: "{{ runner_base_dir }}/{{ runner_user }}"
+  tags:
+    - "runner_unregister"

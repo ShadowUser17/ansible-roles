@@ -9,7 +9,7 @@
     system: yes
     state: "present"
   tags:
-    - "github_runner"
+    - "runner_install"
 
 - name: "Download archive..."
   get_url:
@@ -19,7 +19,7 @@
     group: "{{ runner_user }}"
     mode: "0644"
   tags:
-    - "github_runner"
+    - "runner_install"
 
 - name: "Extract archive..."
   unarchive:
@@ -30,7 +30,7 @@
     keep_newer: yes
     remote_src: yes
   tags:
-    - "github_runner"
+    - "runner_install"
 
 - name: "Configure runner..."
   remote_user: "{{ runner_user }}"
@@ -38,7 +38,7 @@
     cmd: "sudo -u {{ runner_user }} /bin/bash config.sh --disableupdate --unattended --name \"{{ runner_name }}\" --url \"{{ runner_repo_url }}\" --token \"{{ runner_repo_key }}\""
     chdir: "{{ runner_base_dir }}/{{ runner_user }}"
   tags:
-    - "github_runner"
+    - "runner_install"
 
 - name: "Create service..."
   template:
@@ -49,7 +49,7 @@
     group: "root"
     mode: "0644"
   tags:
-    - "github_runner"
+    - "runner_install"
 
 - name: "Enable service..."
   systemd:
@@ -58,4 +58,4 @@
     enabled: yes
     state: "started"
   tags:
-    - "github_runner"
+    - "runner_install"

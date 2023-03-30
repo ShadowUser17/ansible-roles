@@ -6,3 +6,5 @@
 - import_tasks: "debian.yml"
   when:
     - "ansible_facts['os_family']|lower == 'ubuntu'"
+
+- import_tasks: "unregister.yml"

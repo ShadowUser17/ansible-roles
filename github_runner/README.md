@@ -1,5 +1,6 @@
 #### Available tags:
-- github_runner
+- runner_install
+- runner_unregister
 
 #### Available vars:
 - runner_repo_url
