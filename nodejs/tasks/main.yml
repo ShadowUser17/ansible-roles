@@ -1,8 +1,4 @@
 ---
-- import_tasks: "fedora.yml"
-  when:
-    - "ansible_facts['os_family']|lower == 'redhat'"
-
 - import_tasks: "debian.yml"
   when:
     - "ansible_facts['os_family']|lower == 'debian'"
@@ -10,3 +6,9 @@
 - import_tasks: "debian.yml"
   when:
     - "ansible_facts['os_family']|lower == 'ubuntu'"
+
+- import_tasks: "fedora.yml"
+  when:
+    - "ansible_facts['os_family']|lower == 'redhat'"
+
+- import_tasks: "typescript.yml"
