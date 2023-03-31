@@ -13,7 +13,12 @@ python3 -m venv --upgrade-deps env && \
 
 #### Get VM info:
 ```bash
-./env/bin/ansible -i <inventory> -m 'gather_facts' <hosts>
+./env/bin/ansible -i <inventory> -m 'gather_facts' <hosts> > facts.json
+```
+
+#### Ping host:
+```bash
+./env/bin/ansible -i <inventory> -m 'ping' <hosts>
 ```
 
 #### New empty role:
