@@ -3,7 +3,6 @@
   when: "ansible_facts['os_family']|lower == 'debian' or ansible_facts['os_family']|lower == 'ubuntu'"
 
 - import_tasks: "fedora.yml"
-  when:
-    - "ansible_facts['os_family']|lower == 'redhat'"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
 
 - import_tasks: "typescript.yml"

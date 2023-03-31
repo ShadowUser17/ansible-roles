@@ -1,7 +1,6 @@
 ---
 - import_tasks: "debian.yml"
-  when:
-    - "ansible_facts['os_family']|lower == 'debian'"
+  when: "ansible_facts['os_family']|lower == 'debian'"
 
 - name: "Download tmux.conf..."
   get_url:
