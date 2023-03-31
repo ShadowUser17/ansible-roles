@@ -39,6 +39,7 @@
     chdir: "{{ runner_base_dir }}/{{ runner_user }}"
   tags:
     - "runner_install"
+    - "runner_register"
 
 - name: "Create service..."
   template:
@@ -59,3 +60,4 @@
     state: "started"
   tags:
     - "runner_install"
+    - "runner_register"

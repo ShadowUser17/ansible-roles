@@ -1,5 +1,6 @@
 #### Available tags:
 - runner_install
+- runner_register
 - runner_unregister
 
 #### Available vars:
