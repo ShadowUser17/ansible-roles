@@ -21,7 +21,7 @@
 
 - name: "Add repository..."
   apt_repository:
-    repo: "deb https://download.docker.com/linux/debian {{ lsb_release }} stable"
+    repo: "deb https://download.docker.com/linux/debian {{ ansible_facts['lsb']['codename'] }} stable"
     state: "present"
   tags:
     - "docker"
