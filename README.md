@@ -1,5 +1,9 @@
 ### Roles for my testing stand...
 
+#### URLs:
+- [ansible-core](https://github.com/ansible/ansible/releases)
+- [ansible-lint](https://github.com/ansible/ansible-lint/releases)
+
 #### Install Ansible:
 ```bash
 python3 -m venv --upgrade-deps env && \
