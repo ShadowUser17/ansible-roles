@@ -2,7 +2,7 @@
 helm: "3.11.2"
 helm_file: "/root/helm-linux-amd64.tgz"
 
-datree: "1.8.47"
+datree: "1.8.49"
 datree_file: "/root/datree-cli-x86_64.zip"
 
 kubeseal: "0.20.2"
@@ -11,5 +11,5 @@ kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 kubeshark: "39.5"
 kubeshark_file: "/usr/local/bin/kubeshark"
 
-kubescape: "2.2.5"
+kubescape: "2.2.6"
 kubescape_file: "/usr/local/bin/kubescape"
