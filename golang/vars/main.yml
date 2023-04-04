@@ -1,4 +1,4 @@
 ---
 gobrew_version: "1.8.1"
 gobrew_file: "/usr/local/bin/gobrew"
-go_version: "1.19.7"
+go_version: "1.19.8"
