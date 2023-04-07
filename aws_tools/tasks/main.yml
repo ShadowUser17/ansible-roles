@@ -1,0 +1,35 @@
+---
+- name: "Download AWS CLI archive..."
+  get_url:
+    url: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
+    dest: "{{ aws_cli_file }}"
+    mode: "0644"
+  tags:
+    - "aws_cli"
+    - "aws_tools"
+
+- name: "Extract AWS CLI archive..."
+  unarchive:
+    src: "{{ aws_cli_file }}"
+    dest: "{{ aws_cli_dest }}"
+    keep_newer: yes
+    remote_src: yes
+    owner: "root"
+    group: "root"
+  tags:
+    - "aws_cli"
+    - "aws_tools"
+
+- name: "Install AWS CLI..."
+  shell: "{{ aws_cli_dest }}/aws/install"
+  tags:
+    - "aws_cli"
+    - "aws_tools"
+
+- name: "Remove AWS CLI tmp files..."
+  file:
+    path: "{{ aws_cli_dest }}/aws"
+    state: "absent"
+  tags:
+    - "aws_cli"
+    - "aws_tools"
