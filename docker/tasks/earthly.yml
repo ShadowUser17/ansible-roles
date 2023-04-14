@@ -1,0 +1,10 @@
+---
+- name: "Download earthly file..."
+  get_url:
+    url: "https://github.com/earthly/earthly/releases/download/v{{ earthly_version }}/earthly-linux-amd64"
+    dest: "{{ earthly_file }}"
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "earthly"
