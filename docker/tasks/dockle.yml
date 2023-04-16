@@ -1,0 +1,38 @@
+---
+- name: "Download dockle deb..."
+  get_url:
+    url: "https://github.com/goodwithtech/dockle/releases/download/v{{ dockle_version }}/dockle_{{ dockle_version }}_Linux-64bit.deb"
+    dest: "{{ dockle_base_name }}.deb"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "dockle"
+    - "docker_tools"
+
+- name: "Install dockle deb..."
+  shell: "dpkg -i {{ dockle_base_name }}.deb"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "dockle"
+    - "docker_tools"
+
+- name: "Download dockle rpm..."
+  get_url:
+    url: "https://github.com/goodwithtech/dockle/releases/download/v{{ dockle_version }}/dockle_{{ dockle_version }}_Linux-64bit.rpm"
+    dest: "{{ dockle_base_name }}.rpm"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "dockle"
+    - "docker_tools"
+
+- name: "Install dockle rpm..."
+  shell: "rpm -U {{ dockle_base_name }}.rpm"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "dockle"
+    - "docker_tools"
