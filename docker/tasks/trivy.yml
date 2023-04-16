@@ -1,0 +1,38 @@
+---
+- name: "Download trivy deb..."
+  get_url:
+    url: "https://github.com/aquasecurity/trivy/releases/download/v{{ trivy_version }}/trivy_{{ trivy_version }}_Linux-64bit.deb"
+    dest: "{{ trivy_base_name }}.deb"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "trivy"
+    - "docker_tools"
+
+- name: "Install trivy deb..."
+  shell: "dpkg -i {{ trivy_base_name }}.deb"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "trivy"
+    - "docker_tools"
+
+- name: "Download trivy rpm..."
+  get_url:
+    url: "https://github.com/aquasecurity/trivy/releases/download/v{{ trivy_version }}/trivy_{{ trivy_version }}_Linux-64bit.rpm"
+    dest: "{{ trivy_base_name }}.rpm"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "trivy"
+    - "docker_tools"
+
+- name: "Install trivy rpm..."
+  shell: "rpm -U {{ trivy_base_name }}.rpm"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "trivy"
+    - "docker_tools"

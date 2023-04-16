@@ -8,3 +8,4 @@
     mode: "0755"
   tags:
     - "earthly"
+    - "docker_tools"
