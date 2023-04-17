@@ -2,6 +2,7 @@
 - hosts: "testing"
   name: "Configure optional services..."
   become: true
+  # debugger: "on_failed"
   roles:
     - "nfs"
     - "nginx"

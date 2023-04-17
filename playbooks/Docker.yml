@@ -2,6 +2,7 @@
 - hosts: "testing"
   name: "Install Docker"
   become: true
+  # debugger: "on_failed"
   roles:
     - "docker"
     - "repos"
