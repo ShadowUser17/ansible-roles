@@ -4,9 +4,13 @@ all:
     ansible_user: "vagrant"
     ansible_port: 22
   children:
-    testing:
+    vagrant:
       hosts:
         testing:
+    k3s_hosts:
+      hosts:
+        k3s-server:
+        k3s-agent:
     k3s_servers:
       hosts:
         k3s-server:

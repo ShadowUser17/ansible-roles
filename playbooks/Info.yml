@@ -1,0 +1,26 @@
+---
+- hosts: "all"
+  name: "Collect VM info"
+  become: true
+  # debugger: "on_failed"
+  tasks:
+    - name: "Get facts..."
+      register: "facts"
+      setup:
+        gather_subset:
+          - "all"
+
+    - name: "Store facts..."
+      copy:
+        content: "{{ facts }}"
+        dest: "/root/facts.json"
+        owner: "root"
+        group: "root"
+        mode: "0600"
+        force: true
+
+    - name: "Fetch remote facts..."
+      fetch:
+        src: "/root/facts.json"
+        dest: "../facts/{{ inventory_hostname }}.json"
+        flat: true
