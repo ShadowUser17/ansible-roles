@@ -1,5 +1,5 @@
 ---
-- hosts: "testing"
+- hosts: "vagrant"
   name: "Configure optional services..."
   become: true
   # debugger: "on_failed"
