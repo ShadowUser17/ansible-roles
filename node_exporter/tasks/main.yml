@@ -1,0 +1,59 @@
+---
+- name: "Download node_exporter archive..."
+  get_url:
+    url: "https://github.com/prometheus/node_exporter/releases/download/v{{ node_exporter_version }}/node_exporter-{{ node_exporter_version }}.linux-amd64.tar.gz"
+    dest: "{{ node_exporter_file }}"
+    mode: "0644"
+  tags:
+    - "node_exporter"
+
+- name: "Extract node_exporter archive..."
+  unarchive:
+    src: "{{ node_exporter_file }}"
+    dest: "/tmp/"
+    include: ["node_exporter-{{ node_exporter_version }}.linux-amd64/node_exporter"]
+    keep_newer: yes
+    remote_src: yes
+    owner: "root"
+    group: "root"
+  tags:
+    - "node_exporter"
+
+- name: "Add node_exporter bin..."
+  copy:
+    src: "/tmp/node_exporter-{{ node_exporter_version }}.linux-amd64/node_exporter"
+    dest: "/usr/local/bin/node_exporter"
+    remote_src: yes
+    force: yes
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "node_exporter"
+
+- name: "Remove node_exporter tmp files..."
+  file:
+    path: "/tmp/node_exporter-{{ node_exporter_version }}.linux-amd64"
+    state: "absent"
+  tags:
+    - "node_exporter"
+
+- name: "Add node_exporter service..."
+  copy:
+    src: "node-exporter.service"
+    dest: "/etc/systemd/system/"
+    force: yes
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  tags:
+    - "node_exporter"
+
+- name: "Enable node_exporter service..."
+  systemd:
+    name: "node-exporter"
+    state: "restarted"
+    enabled: yes
+    daemon_reload: yes
+  tags:
+    - "node_exporter"

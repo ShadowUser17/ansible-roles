@@ -7,4 +7,5 @@
     - "nfs"
     - "nginx"
     - "vector"
+    - "node_exporter"
     - "github_runner"

@@ -1,0 +1,14 @@
+[Unit]
+Description=NodeExporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+WorkingDirectory=/tmp
+ExecStart=/usr/local/bin/node_exporter \
+--collector.loadavg --collector.meminfo --collector.filesystem
+
+[Install]
+WantedBy=multi-user.target
