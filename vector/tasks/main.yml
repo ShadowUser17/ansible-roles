@@ -1,0 +1,34 @@
+---
+- name: "Download vector deb..."
+  get_url:
+    url: "https://github.com/vectordotdev/vector/releases/download/v{{ vector_version }}/vector_{{ vector_version }}-1_amd64.deb"
+    dest: "{{ vector_base_name }}.deb"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "vector"
+
+- name: "Install vector deb..."
+  shell: "dpkg -i {{ vector_base_name }}.deb"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "vector"
+
+- name: "Download vector rpm..."
+  get_url:
+    url: "https://github.com/vectordotdev/vector/releases/download/v{{ vector_version }}/vector_{{ vector_version }}-1.x86_64.rpm"
+    dest: "{{ vector_base_name }}.rpm"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "vector"
+
+- name: "Install vector rpm..."
+  shell: "rpm -U {{ vector_base_name }}.rpm"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "vector"

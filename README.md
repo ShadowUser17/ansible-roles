@@ -32,7 +32,7 @@ python3 -m venv --upgrade-deps env && \
 
 #### Run Playbook:
 ```bash
-./env/bin/ansible-playbook -i <inventory> -t <tags> -e <extra-vars> <playbook>
+./env/bin/ansible-playbook -i <inventory> -t <tags> -e <extra-vars> -l <hosts-limit> <playbook>
 ```
 
 #### Test Playbook:

@@ -6,5 +6,5 @@
   roles:
     - "nfs"
     - "nginx"
-    - "aws_tools"
+    - "vector"
     - "github_runner"
