@@ -1,7 +1,10 @@
 #### Available tags:
-- golang
 - gobrew
+- golang
+- golint
+- golang-env
 
 #### Available vars:
-- go_version
+- golang_version
 - gobrew_version
+- golint_version

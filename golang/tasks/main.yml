@@ -8,8 +8,48 @@
     mode: "0755"
   tags:
     - "gobrew"
+    - "golang-env"
 
 - name: "Install golang..."
-  shell: "gobrew install {{ go_version }} && gobrew use {{ go_version }}"
+  shell: "gobrew install {{ golang_version }} && gobrew use {{ golang_version }}"
   tags:
     - "golang"
+    - "golang-env"
+
+- name: "Download golangci-lint deb..."
+  get_url:
+    url: "https://github.com/golangci/golangci-lint/releases/download/v{{ golint_version }}/golangci-lint-{{ golint_version }}-linux-amd64.deb"
+    dest: "{{ golint_base_name }}.deb"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "golint"
+    - "golang-env"
+
+- name: "Install golangci-lint deb..."
+  shell: "dpkg -i {{ golint_base_name }}.deb"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "golint"
+    - "golang-env"
+
+- name: "Download golangci-lint rpm..."
+  get_url:
+    url: "https://github.com/golangci/golangci-lint/releases/download/v{{ golint_version }}/golangci-lint-{{ golint_version }}-linux-amd64.rpm"
+    dest: "{{ golint_base_name }}.rpm"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "golint"
+    - "golang-env"
+
+- name: "Install golangci-lint rpm..."
+  shell: "rpm -U {{ golint_base_name }}.rpm"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "golint"
+    - "golang-env"

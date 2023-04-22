@@ -1,4 +1,7 @@
 ---
 gobrew_version: "1.8.1"
+golang_version: "1.20.3"
 gobrew_file: "/usr/local/bin/gobrew"
-go_version: "1.20.3"
+
+golint_version: "1.52.2"
+golint_base_name: "/root/golangci-lint-linux-amd64"
