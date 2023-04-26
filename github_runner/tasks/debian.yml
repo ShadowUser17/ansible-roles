@@ -20,6 +20,7 @@
     mode: "0644"
   tags:
     - "runner_install"
+    - "runner_update"
 
 - name: "Extract archive..."
   unarchive:
@@ -31,6 +32,7 @@
     remote_src: yes
   tags:
     - "runner_install"
+    - "runner_update"
 
 - name: "Configure runner..."
   remote_user: "{{ runner_user }}"
@@ -55,9 +57,10 @@
 - name: "Enable service..."
   systemd:
     name: "github-runner"
+    state: "restarted"
     daemon_reload: yes
     enabled: yes
-    state: "started"
   tags:
     - "runner_install"
+    - "runner_update"
     - "runner_register"

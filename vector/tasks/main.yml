@@ -32,3 +32,14 @@
   when: "ansible_facts['os_family']|lower == 'redhat'"
   tags:
     - "vector"
+
+- name: "Update vector service..."
+  copy:
+    src: "vector.service"
+    dest: "/usr/lib/systemd/system/vector.service"
+    force: yes
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  tags:
+    - "vector"
