@@ -7,10 +7,10 @@
   tags:
     - "create_user"
 
-- name: "Add ssh key..."
-  authorized_key:
-    user: "{{ ssh_user }}"
-    key: "{{ lookup('file', ssh_file) }}"
-    state: "present"
-  tags:
-    - "add_ssh_key"
+# - name: "Add ssh key..."
+#   authorized_key:
+#     user: "{{ ssh_user }}"
+#     key: "{{ lookup('file', ssh_file) }}"
+#     state: "present"
+#   tags:
+#     - "add_ssh_key"

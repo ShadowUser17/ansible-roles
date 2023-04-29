@@ -5,3 +5,4 @@
 #### Available vars:
 - repo_url
 - repo_dir
+- repo_branch

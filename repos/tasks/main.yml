@@ -4,9 +4,9 @@
     repo: "git@github.com:ShadowUser17/DockerTemplates.git"
     dest: "/root/templates"
     version: "master"
+    key_file: "~/.ssh/git_ssh_key"
     force: yes
     clone: yes
-    key_file: "~/.ssh/git_ssh_key"
     accept_hostkey: yes
   tags:
     - "docker_templates"
@@ -15,11 +15,10 @@
   git:
     repo: "{{ repo_url }}"
     dest: "/root/{{ repo_dir }}"
-    version: "master"
+    version: "{{ repo_branch }}"
+    key_file: "~/.ssh/git_ssh_key"
     force: yes
     clone: yes
-    key_file: "~/.ssh/git_ssh_key"
     accept_hostkey: yes
-    when: "repo_url is defined && repo_dir is defined"
   tags:
     - "clone_repo"
