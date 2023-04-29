@@ -5,7 +5,7 @@
     shell: "/bin/bash"
     state: "present"
   tags:
-    - "user"
+    - "create_user"
 
 - name: "Add ssh key..."
   authorized_key:
@@ -13,4 +13,4 @@
     key: "{{ lookup('file', ssh_file) }}"
     state: "present"
   tags:
-    - "ssh"
+    - "add_ssh_key"

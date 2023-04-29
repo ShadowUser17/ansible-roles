@@ -9,5 +9,17 @@
     key_file: "~/.ssh/git_ssh_key"
     accept_hostkey: yes
   tags:
-    - "docker"
-    - "repos"
+    - "docker_templates"
+
+- name: "Clone repo: {{ repo_url }}"
+  git:
+    repo: "{{ repo_url }}"
+    dest: "/root/{{ repo_dir }}"
+    version: "master"
+    force: yes
+    clone: yes
+    key_file: "~/.ssh/git_ssh_key"
+    accept_hostkey: yes
+    when: "repo_url is defined && repo_dir is defined"
+  tags:
+    - "clone_repo"

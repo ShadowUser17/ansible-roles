@@ -1,6 +1,6 @@
 #### Available tags:
-- user
-- ssh
+- create_user
+- add_ssh_key
 
 #### Available vars:
 - ssh_user

@@ -6,6 +6,8 @@
   roles:
     - "packages"
     - "configs"
+    - "users"
+    - "repos"
     - "nodejs"
     - "golang"
     - "nerdctl"
