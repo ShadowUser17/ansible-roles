@@ -1,8 +1,9 @@
 ### Roles for my testing stand...
 
 #### URLs:
-- [ansible-core](https://github.com/ansible/ansible/releases)
+- [molecule](https://github.com/ansible-community/molecule/releases)
 - [ansible-lint](https://github.com/ansible/ansible-lint/releases)
+- [ansible-core](https://github.com/ansible/ansible/releases)
 
 #### Install Ansible:
 ```bash
