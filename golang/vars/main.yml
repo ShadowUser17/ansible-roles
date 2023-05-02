@@ -1,6 +1,6 @@
 ---
 gobrew_version: "1.8.4"
-golang_version: "1.20.3"
+golang_version: "1.20.4"
 gobrew_file: "/usr/local/bin/gobrew"
 
 golint_version: "1.52.2"
