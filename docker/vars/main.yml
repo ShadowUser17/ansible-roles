@@ -1,4 +1,7 @@
 ---
+osv_version: "1.3.2"
+osv_file: "/usr/local/bin/osv-scanner"
+
 trivy_version: "0.41.0"
 trivy_base_name: "/root/trivy_linux_amd64"
 
