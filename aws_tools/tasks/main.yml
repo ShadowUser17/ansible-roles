@@ -33,3 +33,14 @@
   tags:
     - "aws_cli"
     - "aws_tools"
+
+- name: "Download chamber file..."
+  get_url:
+    url: "https://github.com/segmentio/chamber/releases/download/v{{ chamber_version }}/chamber-v{{ chamber_version }}-linux-amd64"
+    dest: "{{ chamber_file }}"
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "chamber"
+    - "aws_tools"
