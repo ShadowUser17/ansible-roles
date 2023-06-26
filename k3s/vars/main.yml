@@ -1,5 +1,5 @@
 ---
-k3s_version: "v1.25.10+k3s1"
+k3s_version: "v1.25.11+k3s1"
 k3s_file: "/root/get-k3s.sh"
 k3s_node: "k3s"
 k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
