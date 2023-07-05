@@ -53,3 +53,41 @@
   tags:
     - "golint"
     - "golang-env"
+
+- name: "Download nfpm deb..."
+  get_url:
+    url: "https://github.com/goreleaser/nfpm/releases/download/v{{ nfpm_version }}/nfpm_{{ nfpm_version }}_amd64.deb"
+    dest: "{{ nfpm_base_name }}.deb"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "nfpm"
+    - "golang-env"
+
+- name: "Install nfpm deb..."
+  shell: "dpkg -i {{ nfpm_base_name }}.deb"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "nfpm"
+    - "golang-env"
+
+- name: "Download nfpm rpm..."
+  get_url:
+    url: "https://github.com/goreleaser/nfpm/releases/download/v{{ nfpm_version }}/nfpm-{{ nfpm_version }}.x86_64.rpm"
+    dest: "{{ nfpm_base_name }}.rpm"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "nfpm"
+    - "golang-env"
+
+- name: "Install nfpm rpm..."
+  shell: "rpm -U {{ nfpm_base_name }}.rpm"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "nfpm"
+    - "golang-env"
