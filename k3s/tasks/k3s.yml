@@ -6,6 +6,7 @@
     mode: "0755"
   tags:
     - "k3s"
+    - "k3s_cilium"
 
 - name: "Install k3s server..."
   shell: |
@@ -17,6 +18,19 @@
     --disable "traefik"
   tags:
     - "k3s"
+
+- name: "Install k3s server with cilium..."
+  shell: |
+    INSTALL_K3S_CHANNEL="{{ k3s_version }}" {{ k3s_file }} server \
+    --token "{{ k3s_token }}" \
+    --node-name "{{ k3s_node }}" \
+    --with-node-id \
+    --flannel-backend "none" \
+    --disable-network-policy \
+    --disable-helm-controller \
+    --disable "traefik"
+  tags:
+    - "k3s_cilium"
 
 - name: "Create .kube directory..."
   file:
