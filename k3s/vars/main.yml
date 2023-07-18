@@ -7,5 +7,5 @@ k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
 flux_version: "2.0.1"
 flux_file: "/root/flux_linux_amd64.tgz"
 
-kube_version: "1.25.11"
-kube_file: "/usr/local/bin/kubectl"
+kubectl_version: "1.25.11"
+kubectl_file: "/usr/local/bin/kubectl"

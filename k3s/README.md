@@ -12,4 +12,4 @@
 
 #### Other vars:
 - flux_version
-- kube_version
+- kubectl_version

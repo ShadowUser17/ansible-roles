@@ -1,8 +1,8 @@
 ---
 - name: "Download kubectl file..."
   get_url:
-    url: "https://storage.googleapis.com/kubernetes-release/release/v{{ kube_version }}/bin/linux/amd64/kubectl"
-    dest: "{{ kube_file }}"
+    url: "https://storage.googleapis.com/kubernetes-release/release/v{{ kubectl_version }}/bin/linux/amd64/kubectl"
+    dest: "{{ kubectl_file }}"
     owner: "root"
     group: "root"
     mode: "0755"
