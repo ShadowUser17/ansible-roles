@@ -2,7 +2,7 @@
 helm: "3.12.2"
 helm_file: "/root/helm-linux-amd64.tgz"
 
-datree: "1.9.10"
+datree: "1.9.17"
 datree_file: "/root/datree-cli-x86_64.zip"
 
 kubeseal: "0.23.0"

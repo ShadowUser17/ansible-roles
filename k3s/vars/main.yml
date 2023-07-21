@@ -10,5 +10,5 @@ flux_file: "/root/flux_linux_amd64.tgz"
 cilium_version: "0.15.2"
 cilium_file: "/root/cilium-linux.tgz"
 
-kubectl_version: "1.25.11"
+kubectl_version: "1.25.12"
 kubectl_file: "/usr/local/bin/kubectl"
