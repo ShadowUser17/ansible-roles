@@ -21,7 +21,7 @@
     - "aws_tools"
 
 - name: "Install AWS CLI..."
-  shell: "{{ aws_cli_dest }}/aws/install"
+  shell: "{{ aws_cli_dest }}/aws/install --update"
   tags:
     - "aws_cli"
     - "aws_tools"
