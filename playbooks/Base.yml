@@ -8,6 +8,7 @@
     - "configs"
     - "users"
     - "repos"
+    - "cdktf"
     - "nodejs"
     - "golang"
     - "nerdctl"

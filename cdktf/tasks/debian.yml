@@ -1,0 +1,35 @@
+---
+- name: "Install dependencies..."
+  apt:
+    pkg:
+      - "apt-transport-https"
+      - "ca-certificates"
+      - "lsb-release"
+      - "gnupg"
+      - "curl"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "hashicorp_repo"
+
+- name: "Add GPG key..."
+  apt_key:
+    url: "https://apt.releases.hashicorp.com/gpg"
+    state: "present"
+  tags:
+    - "hashicorp_repo"
+
+- name: "Add repository..."
+  apt_repository:
+    repo: "deb https://apt.releases.hashicorp.com {{ ansible_facts['lsb']['codename'] }} main"
+    state: "present"
+  tags:
+    - "hashicorp_repo"
+
+- name: "Install Terraform..."
+  apt:
+    pkg: "terraform"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "terraform"
