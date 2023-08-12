@@ -15,6 +15,9 @@
       - "gitleaks"
     keep_newer: yes
     remote_src: yes
+    owner: "root"
+    group: "root"
+    mode: "0755"
   tags:
     - "gitleaks"
     - "git_tools"
