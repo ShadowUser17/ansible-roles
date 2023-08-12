@@ -1,1 +1,20 @@
 ---
+- name: "Download gitleaks archive..."
+  get_url:
+    url: "https://github.com/zricethezav/gitleaks/releases/download/v{{ gitleaks_version }}/gitleaks_{{ gitleaks_version }}_linux_x64.tar.gz"
+    dest: "{{ gitleaks_file }}"
+  tags:
+    - "gitleaks"
+    - "git_tools"
+
+- name: "Extract gitleaks archive..."
+  unarchive:
+    src: "{{ gitleaks_file }}"
+    dest: "/usr/local/bin/"
+    include:
+      - "gitleaks"
+    keep_newer: yes
+    remote_src: yes
+  tags:
+    - "gitleaks"
+    - "git_tools"
