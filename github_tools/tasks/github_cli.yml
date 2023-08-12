@@ -1,0 +1,38 @@
+---
+- name: "Download github-cli deb..."
+  get_url:
+    url: "https://github.com/cli/cli/releases/download/v{{ gh_cli_version }}/gh_{{ gh_cli_version }}_linux_amd64.deb"
+    dest: "{{ gh_cli_base_name }}.deb"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "github_cli"
+    - "git_tools"
+
+- name: "Install github-cli deb..."
+  shell: "dpkg -i {{ gh_cli_base_name }}.deb"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "github_cli"
+    - "git_tools"
+
+- name: "Download github-cli rpm..."
+  get_url:
+    url: "https://github.com/cli/cli/releases/download/v{{ gh_cli_version }}/gh_{{ gh_cli_version }}_linux_amd64.rpm"
+    dest: "{{ gh_cli_base_name }}.rpm"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "github_cli"
+    - "git_tools"
+
+- name: "Install github-cli rpm..."
+  shell: "rpm -U {{ gh_cli_base_name }}.rpm"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "github_cli"
+    - "git_tools"
