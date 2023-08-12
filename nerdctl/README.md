@@ -3,4 +3,4 @@
 - k3s_config
 
 #### Available vars:
-- app_version
+- nerdctl_version

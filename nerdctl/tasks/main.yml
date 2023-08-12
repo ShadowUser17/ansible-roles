@@ -1,14 +1,14 @@
 ---
 - name: "Download nerdctl archive..."
   get_url:
-    url: "https://github.com/containerd/nerdctl/releases/download/v{{ app_version }}/nerdctl-{{ app_version }}-linux-amd64.tar.gz"
-    dest: "{{ app_file }}"
+    url: "https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}/nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz"
+    dest: "{{ nerdctl_file }}"
   tags:
     - "nerdctl"
 
 - name: "Extract nerdctl archive..."
   unarchive:
-    src: "{{ app_file }}"
+    src: "{{ nerdctl_file }}"
     dest: "/usr/local/bin/"
     include:
       - "nerdctl"
