@@ -1,0 +1,9 @@
+---
+all:
+  vars:
+    ansible_user: "vagrant"
+    ansible_port: 22
+  children:
+    vagrant:
+      hosts:
+        testing:

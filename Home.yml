@@ -1,0 +1,12 @@
+---
+all:
+  vars:
+    ansible_user: "root"
+    ansible_port: 22
+  children:
+    qemu:
+      hosts:
+        testing:
+    k3s:
+      hosts:
+        k3s-server:

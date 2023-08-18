@@ -1,10 +1,8 @@
 env
 facts
 target
+testing
 
 *.pem
 *.pub
 *.example
-
-Test.yml
-testing
