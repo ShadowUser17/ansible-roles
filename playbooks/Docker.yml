@@ -1,5 +1,5 @@
 ---
-- hosts: "vagrant"
+- hosts: "all"
   name: "Install Docker"
   become: true
   # debugger: "on_failed"

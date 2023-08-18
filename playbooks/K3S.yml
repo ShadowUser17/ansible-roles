@@ -1,5 +1,5 @@
 ---
-- hosts: "k3s_servers"
+- hosts: "all"
   name: "Install K3S"
   become: true
   # debugger: "on_failed"
