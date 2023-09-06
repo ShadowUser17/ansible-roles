@@ -1,0 +1,18 @@
+[Unit]
+Description=Jenkins
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User={{ jenkins_user }}
+Group={{ jenkins_user }}
+Type=simple
+Restart=on-failure
+WorkingDirectory={{ jenkins_base_dir }}/{{ jenkins_user }}
+ExecStart=/usr/bin/java -Xmx256m -jar \
+{{ jenkins_base_dir }}/{{ jenkins_user }}/{{ jenkins_file }} \
+--httpListenAddress=0.0.0.0 \
+--httpPort={{ jenkins_http }}
+
+[Install]
+WantedBy=multi-user.target
