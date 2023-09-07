@@ -5,8 +5,10 @@
   # debugger: "on_failed"
   roles:
     - "nfs"
+    - "k3s"
     - "nginx"
     - "vector"
+    - "docker"
     - "jenkins"
     - "node_exporter"
     - "github_runner"

@@ -12,5 +12,6 @@
     - "nodejs"
     - "golang"
     - "nerdctl"
+    - "k3s_tools"
     - "aws_tools"
     - "github_tools"

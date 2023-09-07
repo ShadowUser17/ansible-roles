@@ -1,9 +1,0 @@
----
-- hosts: "all"
-  name: "Install K3S"
-  become: true
-  # debugger: "on_failed"
-  roles:
-    - "k3s"
-    - "nerdctl"
-    - "k3s_tools"

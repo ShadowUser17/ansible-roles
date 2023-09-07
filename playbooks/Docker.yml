@@ -1,8 +1,0 @@
----
-- hosts: "all"
-  name: "Install Docker"
-  become: true
-  # debugger: "on_failed"
-  roles:
-    - "docker"
-    - "repos"
