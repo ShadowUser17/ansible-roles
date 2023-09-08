@@ -10,4 +10,6 @@ all:
     k3s:
       hosts:
         k3s-server:
-        kube-goat:
+        k3s-agent-one:
+        k3s-agent-two:
+
