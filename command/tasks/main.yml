@@ -1,0 +1,7 @@
+---
+- name: "Execute: {{ cmd_exec }}"
+  shell:
+    cmd: "{{ cmd_exec }}"
+    chdir: "{{ cmd_chdir }}"
+  tags:
+    - "cmd_exec"

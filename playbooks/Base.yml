@@ -6,6 +6,7 @@
   roles:
     - "packages"
     - "configs"
+    - "command"
     - "users"
     - "repos"
     - "cdktf"
