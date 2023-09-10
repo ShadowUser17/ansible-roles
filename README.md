@@ -11,6 +11,13 @@ python3 -m venv --upgrade-deps env && \
 ./env/bin/pip3 install -r requirements.txt
 ```
 
+#### Create empty role:
+```bash
+mkdir -p "${ROLE}"/{tasks,vars} && \
+touch "${ROLE}"/{tasks,vars}/main.yml && \
+touch "${ROLE}"/README.md
+```
+
 #### Get example config:
 ```bash
 ./env/bin/ansible-config init --disabled > ansible.cfg.example
