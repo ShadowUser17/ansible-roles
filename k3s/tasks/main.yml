@@ -3,5 +3,6 @@
   when: "ansible_facts['os_family']|lower == 'debian'"
 
 - import_tasks: "flux.yml"
+- import_tasks: "istio.yml"
 - import_tasks: "cilium.yml"
 - import_tasks: "kubectl.yml"

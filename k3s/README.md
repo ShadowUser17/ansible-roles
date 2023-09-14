@@ -4,6 +4,7 @@
 - k3s_config
 - flux
 - flux_source
+- istio
 - cilium_cli
 - kubectl
 
@@ -14,5 +15,6 @@
 
 #### Other vars:
 - flux_version
+- istio_version
 - cilium_version
 - kubectl_version
