@@ -3,7 +3,6 @@
 - k3s_cilium
 - k3s_config
 - flux
-- flux_source
 - istio
 - cilium_cli
 - kubectl
