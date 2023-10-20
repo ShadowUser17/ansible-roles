@@ -2,5 +2,5 @@
 aws_cli_file: "/root/aws_cli_v2.zip"
 aws_cli_dest: "/tmp"
 
-chamber_version: "2.13.3"
+chamber_version: "2.13.4"
 chamber_file: "/usr/local/bin/chamber"
