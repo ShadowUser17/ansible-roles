@@ -1,5 +1,5 @@
 ---
-osv_version: "1.3.6"
+osv_version: "1.4.2"
 osv_file: "/usr/local/bin/osv-scanner"
 
 trivy_version: "0.46.0"
@@ -8,5 +8,5 @@ trivy_base_name: "/root/trivy_linux_amd64"
 dockle_version: "0.4.13"
 dockle_base_name: "/root/dockle_linux_amd64"
 
-earthly_version: "0.7.20"
+earthly_version: "0.7.21"
 earthly_file: "/usr/local/bin/earthly"
