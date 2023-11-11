@@ -24,6 +24,16 @@
   tags:
     - "bootstrap"
 
+- name: "Install k3s packages for DEB..."
+  apt:
+    pkg:
+      - "iptables"
+      - "open-iscsi"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "k3s-deps"
+
 - name: "Install python packages for DEB..."
   apt:
     pkg:
