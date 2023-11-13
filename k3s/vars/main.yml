@@ -7,7 +7,7 @@ k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
 flux_version: "2.1.2"
 flux_file: "/root/flux_linux_amd64.tgz"
 
-istio_version: "1.19.3"
+istio_version: "1.19.4"
 istio_file: "/root/istio-linux-amd64.tgz"
 
 cilium_version: "0.15.13"
