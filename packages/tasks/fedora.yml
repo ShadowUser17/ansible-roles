@@ -16,6 +16,7 @@
       - "htop"
       - "ncdu"
       - "tree"
+      - "links"
       - "unzip"
       - "tcpdump"
       - "bash-completion"
