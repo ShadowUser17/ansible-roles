@@ -1,8 +1,8 @@
 ---
 k3s_version: "v1.26.11+k3s1"
 k3s_file: "/root/get-k3s.sh"
-k3s_node: "k3s"
 k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
+k3s_server: "https://192.168.56.11:6443"
 
 flux_version: "2.1.2"
 flux_file: "/root/flux_linux_amd64.tgz"

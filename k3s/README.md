@@ -1,5 +1,6 @@
 #### Available tags:
-- k3s
+- k3s_server
+- k3s_agent
 - k3s_cilium
 - k3s_config
 - flux

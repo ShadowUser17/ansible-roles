@@ -5,32 +5,41 @@
     dest: "{{ k3s_file }}"
     mode: "0755"
   tags:
-    - "k3s"
+    - "k3s_server"
+    - "k3s_agent"
     - "k3s_cilium"
 
 - name: "Install k3s server..."
   shell: |
     INSTALL_K3S_CHANNEL="{{ k3s_version }}" {{ k3s_file }} server \
     --token "{{ k3s_token }}" \
-    --node-name "{{ k3s_node }}" \
+    --node-name "server" \
     --with-node-id \
-    --disable-helm-controller \
     --disable "traefik"
   tags:
-    - "k3s"
+    - "k3s_server"
 
 - name: "Install k3s server with cilium..."
   shell: |
     INSTALL_K3S_CHANNEL="{{ k3s_version }}" {{ k3s_file }} server \
     --token "{{ k3s_token }}" \
-    --node-name "{{ k3s_node }}" \
+    --node-name "server" \
     --with-node-id \
+    --disable "traefik" \
     --flannel-backend "none" \
-    --disable-network-policy \
-    --disable-helm-controller \
-    --disable "traefik"
+    --disable-network-policy
   tags:
     - "k3s_cilium"
+
+- name: "Install k3s agent..."
+  shell: |
+    INSTALL_K3S_CHANNEL="{{ k3s_version }}" {{ k3s_file }} agent \
+    --server "{{ k3s_server }}" \
+    --token "{{ k3s_token }}" \
+    --node-name "agent" \
+    --with-node-id
+  tags:
+    - "k3s_agent"
 
 - name: "Create .kube directory..."
   file:
