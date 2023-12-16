@@ -1,0 +1,18 @@
+---
+- name: "Install jsonnet..."
+  shell: "go install github.com/google/go-jsonnet/cmd/jsonnet@latest"
+  tags:
+    - "jsonnet"
+    - "jsonnet_tools"
+
+- name: "Install jsonnet-lint..."
+  shell: "go install github.com/google/go-jsonnet/cmd/jsonnet-lint@latest"
+  tags:
+    - "jsonnet-lint"
+    - "jsonnet_tools"
+
+- name: "Install jsonnet-bundler..."
+  shell: "go install -a github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb@latest"
+  tags:
+    - "jsonnet-bundler"
+    - "jsonnet_tools"
