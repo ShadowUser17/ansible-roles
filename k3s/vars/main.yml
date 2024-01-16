@@ -4,7 +4,7 @@ k3s_file: "/root/get-k3s.sh"
 k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
 k3s_server: "https://192.168.56.11:6443"
 
-flux_version: "2.1.2"
+flux_version: "2.2.2"
 flux_file: "/root/flux_linux_amd64.tgz"
 
 istio_version: "1.20.2"
