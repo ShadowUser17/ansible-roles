@@ -13,5 +13,5 @@ istio_file: "/root/istio-linux-amd64.tgz"
 cilium_version: "0.15.20"
 cilium_file: "/root/cilium-linux.tgz"
 
-kubectl_version: "1.27.9"
+kubectl_version: "1.27.10"
 kubectl_file: "/usr/local/bin/kubectl"
