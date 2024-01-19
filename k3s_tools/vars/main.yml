@@ -5,7 +5,7 @@ helm_file: "/root/helm-linux-amd64.tgz"
 datree: "1.9.19"
 datree_file: "/root/datree-cli-x86_64.zip"
 
-kubeseal: "0.24.5"
+kubeseal: "0.25.0"
 kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 
 kubeshark: "51.0.39"
