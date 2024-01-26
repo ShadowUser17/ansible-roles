@@ -8,8 +8,8 @@ datree_file: "/root/datree-cli-x86_64.zip"
 kubeseal: "0.25.0"
 kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 
-kubeshark: "51.0.39"
+kubeshark: "52.1.9"
 kubeshark_file: "/usr/local/bin/kubeshark"
 
-kubescape: "3.0.1"
+kubescape: "3.0.3"
 kubescape_file: "/usr/local/bin/kubescape"
