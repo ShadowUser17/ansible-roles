@@ -24,3 +24,14 @@
     update_cache: yes
   tags:
     - "bootstrap"
+
+- name: "Install bcc packages for RPM..."
+  dnf:
+    name:
+      - "bcc-tools"
+      - "kernel-devel"
+      - "kernel-headers"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "bcc-tools"

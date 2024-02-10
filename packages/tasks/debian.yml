@@ -35,6 +35,18 @@
   tags:
     - "k3s-deps"
 
+- name: "Install bcc packages for DEB..."
+  apt:
+    pkg:
+      - "bpfcc-tools"
+      - "libbpfcc"
+      - "libbpfcc-dev"
+      - "linux-headers-amd64"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "bcc-tools"
+
 - name: "Install python packages for DEB..."
   apt:
     pkg:
