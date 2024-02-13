@@ -54,6 +54,12 @@
     - "golint"
     - "golang-env"
 
+- name: "Install gosec..."
+  shell: "go install github.com/securego/gosec/v2/cmd/gosec@latest"
+  tags:
+    - "gosec"
+    - "golang-env"
+
 - name: "Download nfpm deb..."
   get_url:
     url: "https://github.com/goreleaser/nfpm/releases/download/v{{ nfpm_version }}/nfpm_{{ nfpm_version }}_amd64.deb"

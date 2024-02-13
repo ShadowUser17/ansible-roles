@@ -2,6 +2,7 @@
 - gobrew
 - golang
 - golint
+- gosec
 - nfpm
 - golang-env
 
