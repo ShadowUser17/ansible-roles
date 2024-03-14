@@ -7,7 +7,7 @@ k3s_server: "https://192.168.56.11:6443"
 flux_version: "2.2.3"
 flux_file: "/root/flux_linux_amd64.tgz"
 
-istio_version: "1.20.3"
+istio_version: "1.21.0"
 istio_file: "/root/istio-linux-amd64.tgz"
 
 cilium_version: "0.16.0"
