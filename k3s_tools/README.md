@@ -1,5 +1,6 @@
 #### Available tags:
 - helm
+- nova
 - datree
 - kubeseal
 - kubeshark
@@ -8,6 +9,7 @@
 
 #### Available vars:
 - helm
+- nova
 - datree
 - kubeseal
 - kubeshark
