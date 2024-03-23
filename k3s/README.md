@@ -32,7 +32,7 @@ kubectl taint node <server_node> "node-role.kubernetes.io/control-plane:NoSchedu
 
 #### Deploy K3S agents:
 ```bash
-./env/bin/ansible-playbook -i Home.yml -l 'k3s-agent-one,k3s-agent-two' -t k3s_agent playbooks/Services.yml
+./env/bin/ansible-playbook -i Home.yml -l k3s-agents -t k3s_agent playbooks/Services.yml
 ```
 
 #### Configure kubectl:
