@@ -35,6 +35,15 @@
     - "tetragon"
     - "tetragon_all"
 
+- name: "Enable tetragon process credentials..."
+  copy:
+    dest: "/etc/tetragon/tetragon.conf.d/enable-process-cred"
+    mode: "0644"
+    content: "true\n"
+  tags:
+    - "tetragon"
+    - "tetragon_all"
+
 - name: "Download tetra archive..."
   get_url:
     url: "https://github.com/cilium/tetragon/releases/download/v{{ tetragon_version }}/tetra-linux-amd64.tar.gz"
