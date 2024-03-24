@@ -10,5 +10,6 @@
     - "vector"
     - "docker"
     - "jenkins"
+    - "tetragon"
     - "node_exporter"
     - "github_runner"

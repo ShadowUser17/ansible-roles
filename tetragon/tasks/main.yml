@@ -1,0 +1,32 @@
+---
+- name: "Download tetragon archive..."
+  get_url:
+    url: "https://github.com/cilium/tetragon/releases/download/v{{ tetragon }}/tetragon-v{{ tetragon }}-amd64.tar.gz"
+    dest: "{{ tetragon_file }}"
+    mode: "0644"
+  tags:
+    - "tetragon"
+
+- name: "Extract tetragon archive..."
+  unarchive:
+    src: "{{ tetragon_file }}"
+    dest: "/tmp/"
+    keep_newer: yes
+    remote_src: yes
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "tetragon"
+
+- name: "Install tetragon service..."
+  shell: "/tmp/tetragon-v{{ tetragon }}-amd64/install.sh"
+  tags:
+    - "tetragon"
+
+- name: "Remove tetragon tmp files..."
+  file:
+    path: "/tmp/tetragon-v{{ tetragon }}-amd64"
+    state: "absent"
+  tags:
+    - "tetragon"
