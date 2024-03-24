@@ -5,3 +5,8 @@
 
 #### Available vars:
 - tetragon_version
+
+#### Show logs:
+```bash
+cat /var/log/tetragon/tetragon.log | tetra getevents -o compact
+```
