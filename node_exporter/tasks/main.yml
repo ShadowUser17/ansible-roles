@@ -1,7 +1,7 @@
 ---
 - name: "Download node_exporter archive..."
   get_url:
-    url: "https://github.com/prometheus/node_exporter/releases/download/v{{ node_exporter_version }}/node_exporter-{{ node_exporter_version }}.linux-amd64.tar.gz"
+    url: "https://github.com/prometheus/node_exporter/releases/download/v{{ node_exporter }}/node_exporter-{{ node_exporter }}.linux-amd64.tar.gz"
     dest: "{{ node_exporter_file }}"
     mode: "0644"
   tags:
@@ -11,7 +11,7 @@
   unarchive:
     src: "{{ node_exporter_file }}"
     dest: "/tmp/"
-    include: ["node_exporter-{{ node_exporter_version }}.linux-amd64/node_exporter"]
+    include: ["node_exporter-{{ node_exporter }}.linux-amd64/node_exporter"]
     keep_newer: yes
     remote_src: yes
     owner: "root"
@@ -21,7 +21,7 @@
 
 - name: "Add node_exporter bin..."
   copy:
-    src: "/tmp/node_exporter-{{ node_exporter_version }}.linux-amd64/node_exporter"
+    src: "/tmp/node_exporter-{{ node_exporter }}.linux-amd64/node_exporter"
     dest: "/usr/local/bin/node_exporter"
     remote_src: yes
     force: yes
@@ -33,7 +33,7 @@
 
 - name: "Remove node_exporter tmp files..."
   file:
-    path: "/tmp/node_exporter-{{ node_exporter_version }}.linux-amd64"
+    path: "/tmp/node_exporter-{{ node_exporter }}.linux-amd64"
     state: "absent"
   tags:
     - "node_exporter"
