@@ -1,5 +1,7 @@
 #### Available tags:
 - tetragon
+- tetragon_cli
+- tetragon_all
 
 #### Available vars:
-- tetragon
+- tetragon_version

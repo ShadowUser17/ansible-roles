@@ -1,11 +1,12 @@
 ---
 - name: "Download tetragon archive..."
   get_url:
-    url: "https://github.com/cilium/tetragon/releases/download/v{{ tetragon }}/tetragon-v{{ tetragon }}-amd64.tar.gz"
+    url: "https://github.com/cilium/tetragon/releases/download/v{{ tetragon_version }}/tetragon-v{{ tetragon_version }}-amd64.tar.gz"
     dest: "{{ tetragon_file }}"
     mode: "0644"
   tags:
     - "tetragon"
+    - "tetragon_all"
 
 - name: "Extract tetragon archive..."
   unarchive:
@@ -18,15 +19,41 @@
     mode: "0755"
   tags:
     - "tetragon"
+    - "tetragon_all"
 
 - name: "Install tetragon service..."
-  shell: "/tmp/tetragon-v{{ tetragon }}-amd64/install.sh"
+  shell: "/tmp/tetragon-v{{ tetragon_version }}-amd64/install.sh"
   tags:
     - "tetragon"
+    - "tetragon_all"
 
 - name: "Remove tetragon tmp files..."
   file:
-    path: "/tmp/tetragon-v{{ tetragon }}-amd64"
+    path: "/tmp/tetragon-v{{ tetragon_version }}-amd64"
     state: "absent"
   tags:
     - "tetragon"
+    - "tetragon_all"
+
+- name: "Download tetra archive..."
+  get_url:
+    url: "https://github.com/cilium/tetragon/releases/download/v{{ tetragon_version }}/tetra-linux-amd64.tar.gz"
+    dest: "{{ tetra_file }}"
+    mode: "0644"
+  tags:
+    - "tetragon_cli"
+    - "tetragon_all"
+
+- name: "Extract tetra archive..."
+  unarchive:
+    src: "{{ tetra_file }}"
+    dest: "/usr/local/bin/"
+    include: ["tetra"]
+    keep_newer: yes
+    remote_src: yes
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "tetragon_cli"
+    - "tetragon_all"
