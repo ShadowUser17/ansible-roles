@@ -7,10 +7,10 @@
 
 #### Examples:
 ```bash
-./env/bin/ansible-playbook -i Home.yml -l k3s -t 'cmd_exec' -e '{"cmd_exec": "reboot"}' playbooks/Base.yml
+./env/bin/ansible-playbook -i Home.yml -t 'cmd_exec' -e '{"cmd_exec": "reboot"}' playbooks/Base.yml
 ```
 ```bash
-./env/bin/ansible-playbook -i Home.yml -l k3s -t 'cmd_exec' -e '{"cmd_exec": "poweroff"}' playbooks/Base.yml
+./env/bin/ansible-playbook -i Home.yml -t 'cmd_exec' -e '{"cmd_exec": "poweroff"}' playbooks/Base.yml
 ```
 ```bash
 ./env/bin/ansible-playbook -i Home.yml -l k3s -t 'cmd_exec' -e '{"cmd_exec": "crictl rmi -q"}' playbooks/Base.yml
