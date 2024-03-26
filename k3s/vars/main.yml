@@ -1,5 +1,5 @@
 ---
-k3s_version: "v1.27.11+k3s1"
+k3s_version: "v1.27.12+k3s1"
 k3s_file: "/root/get-k3s.sh"
 k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
 k3s_server: "https://192.168.56.11:6443"
@@ -13,5 +13,5 @@ istio_file: "/root/istio-linux-amd64.tgz"
 cilium_version: "0.16.3"
 cilium_file: "/root/cilium-linux.tgz"
 
-kubectl_version: "1.27.11"
+kubectl_version: "1.27.12"
 kubectl_file: "/usr/local/bin/kubectl"
