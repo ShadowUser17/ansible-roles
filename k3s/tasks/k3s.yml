@@ -19,7 +19,7 @@
   tags:
     - "k3s_server"
 
-- name: "Install k3s server with cilium..."
+- name: "Install k3s server without network..."
   shell: |
     INSTALL_K3S_CHANNEL="{{ k3s_version }}" {{ k3s_file }} server \
     --token "{{ k3s_token }}" \
@@ -30,6 +30,7 @@
     --disable-network-policy
   tags:
     - "k3s_cilium"
+    - "k3s_network_none"
 
 - name: "Install k3s agent..."
   shell: |
