@@ -8,11 +8,11 @@ nova_file: "/root/nova-linux-amd64.tgz"
 datree: "1.9.19"
 datree_file: "/root/datree-cli-x86_64.zip"
 
-kubeseal: "0.26.1"
+kubeseal: "0.26.2"
 kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 
-kubeshark: "52.1.77"
+kubeshark: "52.2.1"
 kubeshark_file: "/usr/local/bin/kubeshark"
 
-kubescape: "3.0.7"
+kubescape: "3.0.8"
 kubescape_file: "/usr/local/bin/kubescape"
