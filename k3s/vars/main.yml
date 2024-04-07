@@ -10,8 +10,9 @@ flux_file: "/root/flux_linux_amd64.tgz"
 istio_version: "1.21.0"
 istio_file: "/root/istio-linux-amd64.tgz"
 
-cilium_version: "0.16.4"
-cilium_file: "/root/cilium-linux.tgz"
+cilium_version: "1.15.3"
+cilium_cli_version: "0.16.4"
+cilium_cli_file: "/root/cilium-linux.tgz"
 
 kubectl_version: "1.27.12"
 kubectl_file: "/usr/local/bin/kubectl"

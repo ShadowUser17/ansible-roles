@@ -1,17 +1,18 @@
 #### Available tags:
 - k3s_server
 - k3s_agent
+- k3s_hubble
 - k3s_cilium
 - k3s_network_none
 - k3s_config
 - flux
 - istio
-- cilium_cli
 - kubectl
+- cilium_cli
 
 #### K3S vars:
 - k3s_version
-- k3s_node
+- k3s_server
 - k3s_token
 
 #### Other vars:
@@ -19,6 +20,7 @@
 - istio_version
 - cilium_version
 - kubectl_version
+- cilium_cli_version
 
 #### Deploy K3S server:
 ```bash

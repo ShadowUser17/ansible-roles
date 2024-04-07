@@ -1,16 +1,17 @@
 ---
-- name: "Download cilium-cli archive..."
+- name: "Download cilium_cli archive..."
   get_url:
-    url: "https://github.com/cilium/cilium-cli/releases/download/v{{ cilium_version }}/cilium-linux-amd64.tar.gz"
-    dest: "{{ cilium_file }}"
+    url: "https://github.com/cilium/cilium-cli/releases/download/v{{ cilium_cli_version }}/cilium-linux-amd64.tar.gz"
+    dest: "{{ cilium_cli_file }}"
     mode: "0644"
   tags:
     - "cilium_cli"
+    - "k3s_hubble"
     - "k3s_cilium"
 
-- name: "Extract cilium-cli archive..."
+- name: "Extract cilium_cli archive..."
   unarchive:
-    src: "{{ cilium_file }}"
+    src: "{{ cilium_cli_file }}"
     dest: "/usr/local/bin/"
     include: ["cilium"]
     keep_newer: yes
@@ -19,22 +20,25 @@
     group: "root"
   tags:
     - "cilium_cli"
+    - "k3s_hubble"
     - "k3s_cilium"
 
 - name: "Install cilium..."
   shell: |
-    cilium install \
+    cilium install --version "{{ cilium_version }}" \
     --helm-set "prometheus.enabled=true" \
     --helm-set "operator.prometheus.enabled=true"
   tags:
+    - "k3s_hubble"
     - "k3s_cilium"
 
 - name: "Validate cilium..."
   shell: "cilium status --wait"
   tags:
+    - "k3s_hubble"
     - "k3s_cilium"
 
 - name: "Enable hubble..."
   shell: "cilium hubble enable"
   tags:
-    - "k3s_cilium"
+    - "k3s_hubble"
