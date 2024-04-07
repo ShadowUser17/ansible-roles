@@ -29,13 +29,11 @@
     --helm-set "prometheus.enabled=true" \
     --helm-set "operator.prometheus.enabled=true"
   tags:
-    - "k3s_hubble"
     - "k3s_cilium"
 
 - name: "Validate cilium..."
   shell: "cilium status --wait"
   tags:
-    - "k3s_hubble"
     - "k3s_cilium"
 
 - name: "Enable hubble..."

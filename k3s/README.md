@@ -33,6 +33,14 @@ kubectl taint node <server_node> "node-role.kubernetes.io/master:NoSchedule"
 kubectl taint node <server_node> "node-role.kubernetes.io/control-plane:NoSchedule"
 ```
 
+#### Deploy K3S server with Cilium:
+```bash
+./env/bin/ansible-playbook -i Home.yml -l k3s-server -t k3s_network_none playbooks/Services.yml
+```
+```bash
+./env/bin/ansible-playbook -i Home.yml -l k3s-server -t k3s_cilium playbooks/Services.yml
+```
+
 #### Deploy K3S agents:
 ```bash
 ./env/bin/ansible-playbook -i Home.yml -l k3s-agents -t k3s_agent playbooks/Services.yml
