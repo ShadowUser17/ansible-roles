@@ -1,5 +1,6 @@
 #### Available tags:
 - containerd
+- nerdctl
 - docker
 - trivy
 - dockle
@@ -12,3 +13,4 @@
 - trivy_version
 - dockle_version
 - earthly_version
+- nerdctl_version

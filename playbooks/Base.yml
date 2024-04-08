@@ -12,7 +12,6 @@
     - "nodejs"
     - "golang"
     - "jsonnet"
-    - "nerdctl"
     - "k3s_tools"
     - "aws_tools"
     - "terraform"

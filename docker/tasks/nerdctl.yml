@@ -10,30 +10,8 @@
   unarchive:
     src: "{{ nerdctl_file }}"
     dest: "/usr/local/bin/"
-    include:
-      - "nerdctl"
+    include: ["nerdctl"]
     keep_newer: yes
     remote_src: yes
   tags:
     - "nerdctl"
-
-- name: "Create nerdctl directory..."
-  file:
-    path: "/etc/nerdctl"
-    state: "directory"
-    owner: "root"
-    group: "root"
-    mode: "0755"
-  tags:
-    - "k3s_config"
-
-- name: "Create nerdctl config..."
-  template:
-    src: "nerdctl.toml.j2"
-    dest: "/etc/nerdctl/nerdctl.toml"
-    force: yes
-    owner: "root"
-    group: "root"
-    mode: "0644"
-  tags:
-    - "k3s_config"
