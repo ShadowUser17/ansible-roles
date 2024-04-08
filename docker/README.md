@@ -1,4 +1,5 @@
 #### Available tags:
+- containerd
 - docker
 - trivy
 - dockle

@@ -5,18 +5,19 @@
       - "apt-transport-https"
       - "ca-certificates"
       - "lsb-release"
-      - "gnupg"
       - "curl"
     state: "present"
     update_cache: yes
   tags:
+    - "containerd"
     - "docker"
 
-- name: "Add GPG key..."
+- name: "Add repository key..."
   apt_key:
     url: "https://download.docker.com/linux/debian/gpg"
     state: "present"
   tags:
+    - "containerd"
     - "docker"
 
 - name: "Add repository..."
@@ -24,12 +25,21 @@
     repo: "deb https://download.docker.com/linux/debian {{ ansible_facts['lsb']['codename'] }} stable"
     state: "present"
   tags:
+    - "containerd"
     - "docker"
 
-- name: "Install Docker..."
+- name: "Install containerd..."
+  apt:
+    pkg: "containerd.io"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "containerd"
+    - "docker"
+
+- name: "Install docker..."
   apt:
     pkg:
-      - "containerd.io"
       - "docker-ce"
       - "docker-ce-cli"
       - "docker-buildx-plugin"
