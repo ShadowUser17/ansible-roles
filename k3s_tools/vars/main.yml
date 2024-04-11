@@ -1,5 +1,5 @@
 ---
-helm: "3.14.3"
+helm: "3.14.4"
 helm_file: "/root/helm-linux-amd64.tgz"
 
 nova: "3.8.0"
