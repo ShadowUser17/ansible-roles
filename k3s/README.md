@@ -22,6 +22,13 @@
 - kubectl_version
 - cilium_cli_version
 
+#### URLs:
+- [k3s](https://github.com/k3s-io/k3s/releases)
+- [flux2](https://github.com/fluxcd/flux2/releases)
+- [istio](https://github.com/istio/istio/releases)
+- [cilium](https://github.com/cilium/cilium/releases)
+- [cilium-cli](https://github.com/cilium/cilium-cli/releases)
+
 #### Deploy K3S server:
 ```bash
 ./env/bin/ansible-playbook -i Home.yml -l k3s-server -t k3s_server playbooks/Services.yml
