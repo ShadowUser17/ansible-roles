@@ -5,3 +5,6 @@
 
 #### Available vars:
 - chamber_version
+
+#### URLs:
+- [chamber](https://github.com/segmentio/chamber/releases)
