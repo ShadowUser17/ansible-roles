@@ -11,3 +11,8 @@
 - golang_version
 - gobrew_version
 - golint_version
+
+#### URLs:
+- [nfpm](https://github.com/goreleaser/nfpm/releases)
+- [gobrew](https://github.com/kevincobain2000/gobrew/releases)
+- [golint](https://github.com/golangci/golangci-lint/releases)
