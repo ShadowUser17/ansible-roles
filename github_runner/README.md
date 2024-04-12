@@ -10,3 +10,6 @@
 - runner_version
 - runner_name
 - runner_user
+
+#### URLs:
+- [github_runner](https://github.com/actions/runner/releases)
