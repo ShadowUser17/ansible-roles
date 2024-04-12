@@ -4,6 +4,7 @@
 - tetragon_all
 
 #### Available vars:
+- tetragon_output
 - tetragon_version
 
 #### Show logs:

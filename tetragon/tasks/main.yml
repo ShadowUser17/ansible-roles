@@ -44,6 +44,15 @@
     - "tetragon"
     - "tetragon_all"
 
+- name: "Set tetragon events output..."
+  copy:
+    dest: "/etc/tetragon/tetragon.conf.d/export-file"
+    mode: "0644"
+    content: "{{ tetragon_output }}\n"
+  tags:
+    - "tetragon"
+    - "tetragon_all"
+
 - name: "Download tetra archive..."
   get_url:
     url: "https://github.com/cilium/tetragon/releases/download/v{{ tetragon_version }}/tetra-linux-amd64.tar.gz"
