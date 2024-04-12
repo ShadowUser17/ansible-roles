@@ -7,3 +7,6 @@
 
 #### Available vars:
 - terragrunt
+
+#### URLs:
+- [terragrunt](https://github.com/gruntwork-io/terragrunt/releases)
