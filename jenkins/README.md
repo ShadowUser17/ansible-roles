@@ -6,3 +6,6 @@
 - jenkins_version
 - jenkins_user
 - jenkins_http
+
+#### URLs:
+- [jenkins](https://www.jenkins.io/download/)
