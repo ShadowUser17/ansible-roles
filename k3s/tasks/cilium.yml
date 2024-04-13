@@ -5,9 +5,9 @@
     dest: "{{ cilium_cli_file }}"
     mode: "0644"
   tags:
+    - "hubble"
+    - "cilium"
     - "cilium_cli"
-    - "k3s_hubble"
-    - "k3s_cilium"
 
 - name: "Extract cilium_cli archive..."
   unarchive:
@@ -19,9 +19,9 @@
     owner: "root"
     group: "root"
   tags:
+    - "hubble"
+    - "cilium"
     - "cilium_cli"
-    - "k3s_hubble"
-    - "k3s_cilium"
 
 - name: "Install cilium..."
   shell: |
@@ -29,14 +29,14 @@
     --helm-set "prometheus.enabled=true" \
     --helm-set "operator.prometheus.enabled=true"
   tags:
-    - "k3s_cilium"
+    - "cilium"
 
 - name: "Validate cilium..."
   shell: "cilium status --wait"
   tags:
-    - "k3s_cilium"
+    - "cilium"
 
 - name: "Enable hubble..."
   shell: "cilium hubble enable"
   tags:
-    - "k3s_hubble"
+    - "hubble"

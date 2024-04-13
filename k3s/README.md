@@ -1,12 +1,12 @@
 #### Available tags:
 - k3s_server
 - k3s_agent
-- k3s_hubble
-- k3s_cilium
 - k3s_network_none
 - k3s_config
 - flux
 - istio
+- cilium
+- hubble
 - kubectl
 - cilium_cli
 
@@ -45,7 +45,7 @@ kubectl taint node <server_node> "node-role.kubernetes.io/control-plane:NoSchedu
 ./env/bin/ansible-playbook -i Home.yml -l k3s-server -t k3s_network_none playbooks/Services.yml
 ```
 ```bash
-./env/bin/ansible-playbook -i Home.yml -l k3s-server -t k3s_cilium playbooks/Services.yml
+./env/bin/ansible-playbook -i Home.yml -l k3s-server -t cilium playbooks/Services.yml
 ```
 
 #### Deploy K3S agents:

@@ -7,7 +7,6 @@
   tags:
     - "k3s_server"
     - "k3s_agent"
-    - "k3s_cilium"
 
 - name: "Install k3s server..."
   shell: |
@@ -29,7 +28,6 @@
     --flannel-backend "none" \
     --disable-network-policy
   tags:
-    - "k3s_cilium"
     - "k3s_network_none"
 
 - name: "Install k3s agent..."
