@@ -8,6 +8,7 @@
     - "hubble"
     - "cilium"
     - "cilium_cli"
+    - "cilium_update"
 
 - name: "Extract cilium_cli archive..."
   unarchive:
@@ -22,19 +23,31 @@
     - "hubble"
     - "cilium"
     - "cilium_cli"
+    - "cilium_update"
 
 - name: "Install cilium..."
   shell: |
     cilium install --version "{{ cilium_version }}" \
     --helm-set "prometheus.enabled=true" \
+    --helm-set "operator.replicas=1" \
     --helm-set "operator.prometheus.enabled=true"
   tags:
     - "cilium"
+
+- name: "Update cilium..."
+  shell: |
+    cilium upgrade --version "{{ cilium_version }}" \
+    --helm-set "prometheus.enabled=true" \
+    --helm-set "operator.replicas=1" \
+    --helm-set "operator.prometheus.enabled=true"
+  tags:
+    - "cilium_update"
 
 - name: "Validate cilium..."
   shell: "cilium status --wait"
   tags:
     - "cilium"
+    - "cilium_update"
 
 - name: "Enable hubble..."
   shell: "cilium hubble enable"

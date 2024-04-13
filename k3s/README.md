@@ -6,6 +6,7 @@
 - flux
 - istio
 - cilium
+- cilium_update
 - hubble
 - kubectl
 - cilium_cli
