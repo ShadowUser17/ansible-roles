@@ -9,4 +9,4 @@
 
 #### URLs:
 - [gitleaks](https://github.com/zricethezav/gitleaks/releases)
-- [github_cli](ttps://github.com/cli/cli/releases)
+- [github_cli](https://github.com/cli/cli/releases)
