@@ -5,13 +5,10 @@ helm_file: "/root/helm-linux-amd64.tgz"
 nova: "3.8.0"
 nova_file: "/root/nova-linux-amd64.tgz"
 
-datree: "1.9.19"
-datree_file: "/root/datree-cli-x86_64.zip"
-
 kubeseal: "0.26.2"
 kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 
-kubeshark: "52.2.1"
+kubeshark: "52.2.30"
 kubeshark_file: "/usr/local/bin/kubeshark"
 
 kubescape: "3.0.8"
