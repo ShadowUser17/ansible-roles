@@ -1,5 +1,5 @@
 ---
-tetragon_version: "1.0.3"
+tetragon_version: "1.1.0"
 tetragon_output: "/var/log/tetragon/tetragon.log"
 tetragon_file: "/root/tetragon-amd64.tgz"
 tetra_file: "/root/tetra-amd64.tgz"
