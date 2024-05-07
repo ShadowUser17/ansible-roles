@@ -1,6 +1,6 @@
 ---
 gobrew_version: "1.10.8"
-golang_version: "1.22.2"
+golang_version: "1.22.3"
 gobrew_file: "/usr/local/bin/gobrew"
 
 nfpm_version: "2.36.1"
