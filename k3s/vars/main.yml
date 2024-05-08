@@ -11,7 +11,7 @@ istio_version: "1.21.2"
 istio_file: "/root/istio-linux-amd64.tgz"
 
 cilium_version: "1.15.4"
-cilium_cli_version: "0.16.6"
+cilium_cli_version: "0.16.7"
 cilium_cli_file: "/root/cilium-linux.tgz"
 
 kubectl_version: "1.27.13"
