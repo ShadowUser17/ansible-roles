@@ -13,6 +13,7 @@
       - "git"
       - "curl"
       - "tmux"
+      - "sudo"
       - "htop"
       - "ncdu"
       - "tree"
