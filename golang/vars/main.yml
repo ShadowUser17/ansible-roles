@@ -6,5 +6,5 @@ gobrew_file: "/usr/local/bin/gobrew"
 nfpm_version: "2.37.1"
 nfpm_base_name: "/root/nfpm-amd64"
 
-golint_version: "1.58.1"
+golint_version: "1.58.2"
 golint_base_name: "/root/golangci-lint-linux-amd64"
