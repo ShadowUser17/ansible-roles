@@ -1,11 +1,11 @@
 ---
-helm: "3.15.0"
+helm: "3.15.1"
 helm_file: "/root/helm-linux-amd64.tgz"
 
 nova: "3.8.0"
 nova_file: "/root/nova-linux-amd64.tgz"
 
-kubeseal: "0.26.2"
+kubeseal: "0.26.3"
 kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 
 kubeshark: "52.2.30"
