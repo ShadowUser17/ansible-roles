@@ -11,5 +11,5 @@ dockle_base_name: "/root/dockle_linux_amd64"
 earthly_version: "0.8.9"
 earthly_file: "/usr/local/bin/earthly"
 
-nerdctl_version: "1.7.5"
+nerdctl_version: "1.7.6"
 nerdctl_file: "/root/nerdctl-linux-amd64.tar.gz"
