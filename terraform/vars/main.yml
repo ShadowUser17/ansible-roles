@@ -2,5 +2,5 @@
 cdktf: "latest"
 tfsec: "latest"
 
-terragrunt: "0.58.14"
+terragrunt: "0.58.15"
 terragrunt_file: "/usr/local/bin/terragrunt"
