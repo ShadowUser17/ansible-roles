@@ -10,7 +10,7 @@ flux_file: "/root/flux_linux_amd64.tgz"
 istio_version: "1.22.1"
 istio_file: "/root/istio-linux-amd64.tgz"
 
-cilium_version: "1.15.5"
+cilium_version: "1.15.6"
 cilium_cli_version: "0.16.10"
 cilium_cli_file: "/root/cilium-linux.tgz"
 
