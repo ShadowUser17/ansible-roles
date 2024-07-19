@@ -5,7 +5,7 @@ helm_file: "/root/helm-linux-amd64.tgz"
 nova: "3.9.0"
 nova_file: "/root/nova-linux-amd64.tgz"
 
-kubeseal: "0.27.0"
+kubeseal: "0.27.1"
 kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 
 kubeshark: "52.3.68"
