@@ -1,5 +1,5 @@
 ---
-osv_version: "1.8.2"
+osv_version: "1.8.4"
 osv_file: "/usr/local/bin/osv-scanner"
 
 trivy_version: "0.54.1"
