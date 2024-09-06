@@ -8,8 +8,8 @@ nova_file: "/root/nova-linux-amd64.tgz"
 kubeseal: "0.27.1"
 kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 
-kubeshark: "52.3.78"
+kubeshark: "52.3.79"
 kubeshark_file: "/usr/local/bin/kubeshark"
 
-kubescape: "3.0.16"
+kubescape: "3.0.17"
 kubescape_file: "/usr/local/bin/kubescape"
