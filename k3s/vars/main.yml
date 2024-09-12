@@ -14,5 +14,5 @@ cilium_version: "1.15.8"
 cilium_cli_version: "0.16.16"
 cilium_cli_file: "/root/cilium-linux.tgz"
 
-kubectl_version: "1.30.4"
+kubectl_version: "1.30.5"
 kubectl_file: "/usr/local/bin/kubectl"
