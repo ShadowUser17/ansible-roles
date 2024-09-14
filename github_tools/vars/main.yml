@@ -1,5 +1,5 @@
 ---
-gitleaks_version: "8.18.4"
+gitleaks_version: "8.19.1"
 gitleaks_file: "/root/gitleaks-linux-amd64.tar.gz"
 gh_cli_version: "2.55.0"
 gh_cli_base_name: "/root/gh_linux_amd64"
