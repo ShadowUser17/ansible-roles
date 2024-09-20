@@ -2,7 +2,7 @@
 osv_version: "1.8.4"
 osv_file: "/usr/local/bin/osv-scanner"
 
-trivy_version: "0.55.1"
+trivy_version: "0.55.2"
 trivy_base_name: "/root/trivy_linux_amd64"
 
 dockle_version: "0.4.14"
