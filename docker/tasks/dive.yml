@@ -1,0 +1,38 @@
+---
+- name: "Download dive deb..."
+  get_url:
+    url: "https://github.com/wagoodman/dive/releases/download/v{{ dive_version }}/dive_{{ dive_version }}_linux_amd64.deb"
+    dest: "{{ dive_base_name }}.deb"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "dive"
+    - "docker_tools"
+
+- name: "Install dive deb..."
+  shell: "dpkg -i {{ dive_base_name }}.deb"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "dive"
+    - "docker_tools"
+
+- name: "Download dive rpm..."
+  get_url:
+    url: "https://github.com/wagoodman/dive/releases/download/v{{ dive_version }}/dive_{{ dive_version }}_linux_amd64.rpm"
+    dest: "{{ dive_base_name }}.rpm"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "dive"
+    - "docker_tools"
+
+- name: "Install dive rpm..."
+  shell: "rpm -U {{ dive_base_name }}.rpm"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "dive"
+    - "docker_tools"

@@ -2,6 +2,7 @@
 - containerd
 - nerdctl
 - docker
+- dive
 - trivy
 - dockle
 - earthly
@@ -10,6 +11,7 @@
 
 #### Available vars:
 - osv_version
+- dive_version
 - trivy_version
 - dockle_version
 - earthly_version
@@ -17,6 +19,7 @@
 
 
 #### URLs:
+- [dive](https://github.com/wagoodman/dive/releases)
 - [trivy](https://github.com/aquasecurity/trivy/releases)
 - [dockle](https://github.com/goodwithtech/dockle/releases)
 - [earthly](https://github.com/earthly/earthly/releases)
