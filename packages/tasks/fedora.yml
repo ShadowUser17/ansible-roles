@@ -20,6 +20,8 @@
       - "unzip"
       - "tcpdump"
       - "bash-completion"
+      - "audit"
+      - "audit-rules"
     state: "present"
     update_cache: yes
   tags:

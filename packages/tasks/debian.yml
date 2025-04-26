@@ -20,6 +20,7 @@
       - "links"
       - "unzip"
       - "tcpdump"
+      - "auditd"
       - "bash-completion"
     state: "present"
     update_cache: yes
