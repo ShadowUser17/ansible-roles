@@ -45,3 +45,8 @@ touch "${ROLE}"/README.md
 ```bash
 ./env/bin/ansible-playbook -i <inventory> -C <playbook>
 ```
+
+#### Additional packages for Fedora:
+```bash
+dnf install python3-dnf python3-libdnf5
+```
