@@ -1,0 +1,18 @@
+---
+- name: "Install FreeIPA server..."
+  dnf:
+    name:
+      - "freeipa-server"
+      - "freeipa-healthcheck"
+    update_cache: yes
+    state: "present"
+  tags:
+    - "ipa_server"
+
+- name: "Install FreeIPA client..."
+  dnf:
+    name: "freeipa-client"
+    update_cache: yes
+    state: "present"
+  tags:
+    - "ipa_client"
