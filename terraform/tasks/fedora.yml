@@ -2,6 +2,7 @@
 - name: "Install dependencies..."
   dnf:
     name: "dnf-plugins-core"
+    state: "present"
     update_cache: yes
   tags:
     - "hashicorp_repo"

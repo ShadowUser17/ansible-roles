@@ -2,6 +2,7 @@
 - name: "Install dependencies..."
   dnf:
     name: "dnf-plugins-core"
+    state: "present"
     update_cache: yes
   tags:
     - "containerd"
@@ -14,8 +15,8 @@
     - "docker"
 
 - name: "Install containerd..."
-  apt:
-    pkg: "containerd.io"
+  dnf:
+    name: "containerd.io"
     state: "present"
     update_cache: yes
   tags:
@@ -23,8 +24,8 @@
     - "docker"
 
 - name: "Install docker..."
-  apt:
-    pkg:
+  dnf:
+    name:
       - "docker-ce"
       - "docker-ce-cli"
       - "docker-buildx-plugin"
