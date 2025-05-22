@@ -3,8 +3,8 @@ gobrew_version: "1.10.12"
 golang_version: "1.24.3"
 gobrew_file: "/usr/local/bin/gobrew"
 
-nfpm_version: "2.42.0"
+nfpm_version: "2.42.1"
 nfpm_base_name: "/root/nfpm-amd64"
 
-golint_version: "2.0.2"
+golint_version: "2.1.6"
 golint_base_name: "/root/golangci-lint-linux-amd64"
