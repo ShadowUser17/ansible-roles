@@ -9,6 +9,11 @@
   tags:
     - "ipa_server_install"
 
+- name: "Remove FreeIPA server..."
+  shell: "ipa-server-install --uninstall --unattended --quiet"
+  tags:
+    - "ipa_server_remove"
+
 - name: "Install FreeIPA client..."
   dnf:
     name: "freeipa-client"

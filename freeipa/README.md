@@ -1,13 +1,24 @@
 #### Available tags:
+- ipa_server_install
+- ipa_server_remove
 - ipa_client_install
 - ipa_client_remove
-- ipa_server_install
 
 #### Available vars:
 - ipa_server
 - ipa_domain
 - ipa_admin
 - ipa_passwd
+
+#### Install server:
+```bash
+./env/bin/ansible-playbook -i Home.yml -l <host> -t ipa_server_install playbooks/Services.yml
+```
+
+#### Remove server:
+```bash
+./env/bin/ansible-playbook -i Home.yml -l <host> -t ipa_server_remove playbooks/Services.yml
+```
 
 #### Install client:
 ```bash
