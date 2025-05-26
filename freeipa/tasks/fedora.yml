@@ -9,6 +9,14 @@
   tags:
     - "ipa_server_install"
 
+- name: "Configure FreeIPA server..."
+  shell: |
+    ipa-server-install --domain="{{ ipa_domain }}" --realm="{{ ipa_domain | upper }}" \
+    --admin-password='{{ ipa_admin_passwd }}' --ds-password='{{ ipa_domain_passwd }}' \
+    --mkhomedir --unattended --quiet
+  tags:
+    - "ipa_server_install"
+
 - name: "Remove FreeIPA server..."
   shell: "ipa-server-install --uninstall --unattended --quiet"
   tags:
@@ -26,7 +34,7 @@
   shell: |
     ipa-client-install --server="{{ ipa_server }}.{{ ipa_domain }}" \
     --domain="{{ ipa_domain }}" --realm="{{ ipa_domain | upper }}" \
-    --principal="{{ ipa_admin }}" --password='{{ ipa_passwd }}' \
+    --principal="{{ ipa_admin }}" --password='{{ ipa_admin_passwd }}' \
     --mkhomedir --force-join --unattended --quiet
   tags:
     - "ipa_client_install"

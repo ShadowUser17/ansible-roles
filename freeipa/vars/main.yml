@@ -1,5 +1,6 @@
 ---
-ipa_server: ""
-ipa_domain: ""
+ipa_server: "ipa"
+ipa_domain: "testing.local"
+ipa_domain_passwd: "t79tKkrn7yLwLPMFaE"
 ipa_admin: "admin"
-ipa_passwd: ""
+ipa_admin_passwd: "qTq3s4zwLxugLnx99o"
