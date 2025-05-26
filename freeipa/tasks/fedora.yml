@@ -4,16 +4,16 @@
     name:
       - "freeipa-server"
       - "freeipa-healthcheck"
-    update_cache: yes
     state: "present"
+    update_cache: yes
   tags:
     - "ipa_server_install"
 
 - name: "Install FreeIPA client..."
   dnf:
     name: "freeipa-client"
-    update_cache: yes
     state: "present"
+    update_cache: yes
   tags:
     - "ipa_client_install"
 
@@ -22,11 +22,11 @@
     ipa-client-install --server="{{ ipa_server }}.{{ ipa_domain }}" \
     --domain="{{ ipa_domain }}" --realm="{{ ipa_domain | upper }}" \
     --principal="{{ ipa_admin }}" --password='{{ ipa_passwd }}' \
-    --mkhomedir --force-join --unattended
+    --mkhomedir --force-join --unattended --quiet
   tags:
-    - "ipa_client_config"
+    - "ipa_client_install"
 
 - name: "Remove FreeIPA client..."
-  shell: "ipa-client-install --uninstall --unattended"
+  shell: "ipa-client-install --uninstall --unattended --quiet"
   tags:
     - "ipa_client_remove"
