@@ -1,7 +1,7 @@
 ---
 - name: "Install FreeIPA server..."
-  dnf:
-    name:
+  apt:
+    pkg:
       - "freeipa-server"
       - "freeipa-healthcheck"
     update_cache: yes
@@ -10,8 +10,8 @@
     - "ipa_server_install"
 
 - name: "Install FreeIPA client..."
-  dnf:
-    name: "freeipa-client"
+  apt:
+    pkg: "freeipa-client"
     update_cache: yes
     state: "present"
   tags:
