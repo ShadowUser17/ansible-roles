@@ -25,3 +25,8 @@
     --mkhomedir --force-join --unattended
   tags:
     - "ipa_client_config"
+
+- name: "Remove FreeIPA client..."
+  shell: "ipa-client-install --uninstall --unattended"
+  tags:
+    - "ipa_client_remove"
