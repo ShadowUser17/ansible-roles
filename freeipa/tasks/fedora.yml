@@ -7,7 +7,7 @@
     update_cache: yes
     state: "present"
   tags:
-    - "ipa_server"
+    - "ipa_server_install"
 
 - name: "Install FreeIPA client..."
   dnf:
@@ -15,4 +15,4 @@
     update_cache: yes
     state: "present"
   tags:
-    - "ipa_client"
+    - "ipa_client_install"

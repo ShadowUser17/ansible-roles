@@ -1,3 +1,3 @@
 #### Available tags:
-- ipa_client
-- ipa_server
+- ipa_client_install
+- ipa_server_install
