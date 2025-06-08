@@ -1,5 +1,5 @@
 ---
-helm: "3.17.3"
+helm: "3.18.2"
 helm_file: "/root/helm-linux-amd64.tgz"
 
 nova: "3.11.3"
@@ -8,7 +8,7 @@ nova_file: "/root/nova-linux-amd64.tgz"
 kubeseal: "0.29.0"
 kubeseal_file: "/root/kubeseal-linux-amd64.tgz"
 
-kubeshark: "52.6.0"
+kubeshark: "52.7.7"
 kubeshark_file: "/usr/local/bin/kubeshark"
 
 kubescape: "3.0.34"
