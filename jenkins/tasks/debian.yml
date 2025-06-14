@@ -24,7 +24,9 @@
 
 - name: "Install dependencies..."
   apt:
-    pkg: "openjdk-17-jre"
+    pkg:
+      - "fontconfig"
+      - "openjdk-21-jre"
     state: "present"
     update_cache: yes
   tags:
