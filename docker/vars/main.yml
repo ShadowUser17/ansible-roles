@@ -1,10 +1,4 @@
 ---
-dive_version: "0.13.1"
-dive_base_name: "/root/dive_linux_amd64"
-
-osv_version: "2.0.2"
-osv_file: "/usr/local/bin/osv-scanner"
-
 trivy_version: "0.63.0"
 trivy_base_name: "/root/trivy_linux_amd64"
 

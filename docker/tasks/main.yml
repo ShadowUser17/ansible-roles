@@ -5,9 +5,7 @@
 - import_tasks: "fedora.yml"
   when: "ansible_facts['os_family']|lower == 'redhat'"
 
-- import_tasks: "dive.yml"
 - import_tasks: "trivy.yml"
 - import_tasks: "dockle.yml"
 - import_tasks: "earthly.yml"
 - import_tasks: "nerdctl.yml"
-- import_tasks: "osv_scanner.yml"
