@@ -1,4 +1,4 @@
 ---
 node_file: "/root/add-node-repo.sh"
-node_release: "20"
-tsc_version: "5.5.4"
+node_release: "24"
+tsc_version: "5.8.3"
