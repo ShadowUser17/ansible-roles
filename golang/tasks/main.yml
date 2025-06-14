@@ -54,46 +54,21 @@
     - "golint"
     - "golang-env"
 
-- name: "Install gosec..."
-  shell: "go install github.com/securego/gosec/v2/cmd/gosec@latest"
+- name: "Download gosec archive..."
+  get_url:
+    url: https://github.com/securego/gosec/releases/download/v{{ gosec_version }}/gosec_{{ gosec_version }}_linux_amd64.tar.gz
+    dest: "{{ gosec_file }}"
   tags:
     - "gosec"
     - "golang-env"
 
-- name: "Download nfpm deb..."
-  get_url:
-    url: "https://github.com/goreleaser/nfpm/releases/download/v{{ nfpm_version }}/nfpm_{{ nfpm_version }}_amd64.deb"
-    dest: "{{ nfpm_base_name }}.deb"
-    owner: "root"
-    group: "root"
-    mode: "0644"
-  when: "ansible_facts['os_family']|lower == 'debian'"
+- name: "Extract gosec archive..."
+  unarchive:
+    src: "{{ gosec_file }}"
+    dest: "/usr/local/bin/"
+    include: ["gosec"]
+    keep_newer: yes
+    remote_src: yes
   tags:
-    - "nfpm"
-    - "golang-env"
-
-- name: "Install nfpm deb..."
-  shell: "dpkg -i {{ nfpm_base_name }}.deb"
-  when: "ansible_facts['os_family']|lower == 'debian'"
-  tags:
-    - "nfpm"
-    - "golang-env"
-
-- name: "Download nfpm rpm..."
-  get_url:
-    url: "https://github.com/goreleaser/nfpm/releases/download/v{{ nfpm_version }}/nfpm-{{ nfpm_version }}.x86_64.rpm"
-    dest: "{{ nfpm_base_name }}.rpm"
-    owner: "root"
-    group: "root"
-    mode: "0644"
-  when: "ansible_facts['os_family']|lower == 'redhat'"
-  tags:
-    - "nfpm"
-    - "golang-env"
-
-- name: "Install nfpm rpm..."
-  shell: "rpm -U {{ nfpm_base_name }}.rpm"
-  when: "ansible_facts['os_family']|lower == 'redhat'"
-  tags:
-    - "nfpm"
+    - "gosec"
     - "golang-env"

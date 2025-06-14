@@ -1,10 +1,11 @@
 ---
-gobrew_version: "1.10.12"
 golang_version: "1.24.4"
-gobrew_file: "/usr/local/bin/gobrew"
 
-nfpm_version: "2.42.1"
-nfpm_base_name: "/root/nfpm-amd64"
+gobrew_version: "1.10.12"
+gobrew_file: "/usr/local/bin/gobrew"
 
 golint_version: "2.1.6"
 golint_base_name: "/root/golangci-lint-linux-amd64"
+
+gosec_version: "2.22.4"
+gosec_file: "/root/gosec_linux_amd64.tar.gz"
