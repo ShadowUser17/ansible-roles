@@ -7,4 +7,5 @@
 - user_name
 - user_pkey
 - user_shell
+- user_group
 - user_groups

@@ -1,5 +1,6 @@
 ---
 user_name: "vagrant"
+user_group: "{{ user_name }}"
 user_shell: "/bin/bash"
-user_pkey: "./vm_ssh_key.pub"
+user_pkey: "~/.ssh/keys/virt_ssh_key.pub"
 user_groups: ""

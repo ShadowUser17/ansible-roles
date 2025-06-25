@@ -2,14 +2,35 @@
 - name: "Create user..."
   user:
     name: "{{ user_name }}"
+    group: "{{ user_group }}"
     shell: "{{ user_shell }}"
     groups: "{{ user_groups }}"
-    state: "present"
     create_home: yes
+    state: "present"
   tags:
     - "add_user"
 
-- name: "Add sudoers rules..."
+- name: "Create .ssh directory..."
+  file:
+    path: "/home/{{ user_name }}/.ssh"
+    state: "directory"
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+    mode: "0700"
+  tags:
+    - "add_ssh_key"
+
+- name: "Create authorized_keys..."
+  copy:
+    src: "{{ user_pkey }}"
+    dest: "/home/{{ user_name }}/.ssh/authorized_keys"
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+    mode: "0600"
+  tags:
+    - "add_ssh_key"
+
+- name: "Create sudo rules..."
   template:
     src: "sudo_rules.j2"
     dest: "/etc/sudoers.d/{{ user_name }}"
@@ -19,11 +40,3 @@
     mode: "0644"
   tags:
     - "add_sudoers"
-
-# - name: "Add ssh key..."
-#   authorized_key:
-#     user: "{{ ssh_user }}"
-#     key: "{{ lookup('file', ssh_file) }}"
-#     state: "present"
-#   tags:
-#     - "add_ssh_key"
