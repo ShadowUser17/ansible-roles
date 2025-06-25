@@ -1,3 +1,5 @@
 ---
-ssh_user: "vagrant"
-ssh_file: "./vm_ssh_key.pub"
+user_name: "vagrant"
+user_shell: "/bin/bash"
+user_pkey: "./vm_ssh_key.pub"
+user_groups: ""

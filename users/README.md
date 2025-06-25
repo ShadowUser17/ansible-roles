@@ -1,7 +1,10 @@
 #### Available tags:
-- create_user
+- add_user
+- add_sudoers
 - add_ssh_key
 
 #### Available vars:
-- ssh_user
-- ssh_file
+- user_name
+- user_pkey
+- user_shell
+- user_groups

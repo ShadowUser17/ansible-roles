@@ -1,11 +1,24 @@
 ---
 - name: "Create user..."
   user:
-    name: "{{ ssh_user }}"
-    shell: "/bin/bash"
+    name: "{{ user_name }}"
+    shell: "{{ user_shell }}"
+    groups: "{{ user_groups }}"
     state: "present"
+    create_home: yes
   tags:
-    - "create_user"
+    - "add_user"
+
+- name: "Add sudoers rules..."
+  template:
+    src: "sudo_rules.j2"
+    dest: "/etc/sudoers.d/{{ user_name }}"
+    force: yes
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  tags:
+    - "add_sudoers"
 
 # - name: "Add ssh key..."
 #   authorized_key:
