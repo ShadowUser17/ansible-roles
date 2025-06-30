@@ -1,18 +1,18 @@
 ---
-k3s_version: "v1.32.5+k3s1"
+k3s_version: "v1.32.6+k3s1"
 k3s_file: "/root/get-k3s.sh"
 k3s_token: "AoNwhviL4xukEwTFntvmVpKK"
 k3s_server: "https://192.168.56.11:6443"
 
-flux_version: "2.6.1"
+flux_version: "2.6.3"
 flux_file: "/root/flux_linux_amd64.tgz"
 
-istio_version: "1.26.1"
+istio_version: "1.26.2"
 istio_file: "/root/istio-linux-amd64.tgz"
 
-cilium_version: "1.17.4"
+cilium_version: "1.17.5"
 cilium_cli_version: "0.18.4"
 cilium_cli_file: "/root/cilium-linux.tgz"
 
-kubectl_version: "1.32.5"
+kubectl_version: "1.32.6"
 kubectl_file: "/usr/local/bin/kubectl"
