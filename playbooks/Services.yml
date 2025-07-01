@@ -12,5 +12,6 @@
     - "jenkins"
     - "freeipa"
     - "tetragon"
+    - "wazuh_agent"
     - "node_exporter"
     - "github_runner"

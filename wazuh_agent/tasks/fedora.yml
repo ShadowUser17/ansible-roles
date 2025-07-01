@@ -1,0 +1,30 @@
+---
+- name: "Install dependencies..."
+  dnf:
+    name: "dnf-plugins-core"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "wazuh_agent"
+
+- name: "Add repository..."
+  copy:
+    dest: "/etc/yum.repos.d/wazuh.repo"
+    mode: "0644"
+    content: |
+      [wazuh]
+      name=EL-\$releasever - Wazuh
+      baseurl=https://packages.wazuh.com/4.x/yum/
+      gpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH
+      gpgcheck=1
+      enabled=1
+  tags:
+    - "wazuh_agent"
+
+- name: "Install wazuh-agent..."
+  dnf:
+    name: "wazuh-agent"
+    state: "present"
+    update_cache: yes
+  tags:
+    - "wazuh_agent"
