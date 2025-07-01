@@ -1,6 +1,6 @@
 ---
 - name: "Disable service..."
-  systemd:
+  systemd_service:
     name: "github-runner"
     state: "stopped"
     enabled: false

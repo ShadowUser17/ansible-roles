@@ -35,7 +35,7 @@
 - name: "Create service..."
   template:
     src: "jenkins.service.j2"
-    dest: "/etc/systemd/system/jenkins.service"
+    dest: "/etc/systemd_service/system/jenkins.service"
     force: yes
     owner: "root"
     group: "root"
@@ -44,7 +44,7 @@
     - "jenkins_install"
 
 - name: "Enable service..."
-  systemd:
+  systemd_service:
     name: "jenkins"
     state: "restarted"
     daemon_reload: yes

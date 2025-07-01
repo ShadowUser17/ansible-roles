@@ -36,7 +36,7 @@
 - name: "Update vector service..."
   copy:
     src: "vector.service"
-    dest: "/usr/lib/systemd/system/vector.service"
+    dest: "/usr/lib/systemd_service/system/vector.service"
     force: yes
     owner: "root"
     group: "root"

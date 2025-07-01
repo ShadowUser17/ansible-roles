@@ -41,7 +41,7 @@
     - "nfs"
 
 - name: "Enable nfs service..."
-  systemd:
+  systemd_service:
     name: "nfs-server"
     state: "started"
     enabled: yes

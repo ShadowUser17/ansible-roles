@@ -41,7 +41,7 @@
 - name: "Add node_exporter service..."
   copy:
     src: "node-exporter.service"
-    dest: "/etc/systemd/system/"
+    dest: "/etc/systemd_service/system/"
     force: yes
     owner: "root"
     group: "root"
@@ -50,7 +50,7 @@
     - "node_exporter"
 
 - name: "Enable node_exporter service..."
-  systemd:
+  systemd_service:
     name: "node-exporter"
     state: "restarted"
     enabled: yes

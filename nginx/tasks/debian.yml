@@ -39,7 +39,7 @@
     - "nginx"
 
 - name: "Enable service..."
-  systemd:
+  systemd_service:
     name: "nginx"
     state: "started"
     enabled: yes

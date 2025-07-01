@@ -46,7 +46,7 @@
 - name: "Create service..."
   template:
     src: "runner.service.j2"
-    dest: "/etc/systemd/system/github-runner.service"
+    dest: "/etc/systemd_service/system/github-runner.service"
     force: yes
     owner: "root"
     group: "root"
@@ -55,7 +55,7 @@
     - "runner_install"
 
 - name: "Enable service..."
-  systemd:
+  systemd_service:
     name: "github-runner"
     state: "restarted"
     daemon_reload: yes

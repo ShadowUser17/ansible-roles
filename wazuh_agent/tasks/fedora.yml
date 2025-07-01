@@ -30,7 +30,7 @@
     - "wazuh_agent"
 
 - name: "Disable service..."
-  systemd:
+  systemd_service:
     name: "wazuh-agent"
     state: "stopped"
     daemon_reload: yes
