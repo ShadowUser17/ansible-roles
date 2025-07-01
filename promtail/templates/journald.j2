@@ -1,0 +1,27 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: "/tmp/positions.yaml"
+
+clients:
+  - url: "{{ promtail_client }}"
+
+scrape_configs:
+  - job_name: "journald"
+    journal:
+      path: "/var/log/journal"
+    relabel_configs:
+      - source_labels: ["__journal_syslog_message_severity"]
+        target_label: "syslog_severity"
+      - source_labels: ["__journal_syslog_message_facility"]
+        target_label: "syslog_facility"
+      - source_labels: ["__journal__priority"]
+        target_label: "journald_priority"
+      - source_labels: ["__journal__hostname"]
+        target_label: "journald_hostname"
+      - source_labels: ["__journal__systemd_unit"]
+        target_label: "systemd_unit"
+      - source_labels: ["__journal__transport"]
+        target_label: "journald_transport"

@@ -9,12 +9,16 @@
   when: "ansible_facts['os_family']|lower == 'debian'"
   tags:
     - "promtail"
+    - "promtail_docker"
+    - "promtail_journald"
 
 - name: "Install promtail deb..."
   shell: "dpkg -i {{ promtail_base_name }}.deb"
   when: "ansible_facts['os_family']|lower == 'debian'"
   tags:
     - "promtail"
+    - "promtail_docker"
+    - "promtail_journald"
 
 - name: "Download promtail rpm..."
   get_url:
@@ -26,9 +30,53 @@
   when: "ansible_facts['os_family']|lower == 'redhat'"
   tags:
     - "promtail"
+    - "promtail_docker"
+    - "promtail_journald"
 
 - name: "Install promtail rpm..."
   shell: "rpm -U {{ promtail_base_name }}.rpm"
   when: "ansible_facts['os_family']|lower == 'redhat'"
   tags:
     - "promtail"
+    - "promtail_docker"
+    - "promtail_journald"
+
+- name: "Update user..."
+  user:
+    name: "promtail"
+    groups: "docker"
+    state: "present"
+  tags:
+    - "promtail_docker"
+
+- name: "Configure for docker..."
+  template:
+    src: "docker.j2"
+    dest: "/etc/promtail/config.yml"
+    force: true
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  tags:
+    - "promtail_docker"
+
+- name: "Configure for journald..."
+  template:
+    src: "journald.j2"
+    dest: "/etc/promtail/config.yml"
+    force: true
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  tags:
+    - "promtail_journald"
+
+- name: "Enable service..."
+  systemd_service:
+    name: "promtail"
+    state: "restarted"
+    daemon_reload: true
+    enabled: true
+  tags:
+    - "promtail_docker"
+    - "promtail_journald"
