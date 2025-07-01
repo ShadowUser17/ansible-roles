@@ -5,8 +5,8 @@
     home: "{{ jenkins_base_dir }}/{{ jenkins_user }}"
     shell: "/sbin/nologin"
     groups: "docker"
-    create_home: yes
-    system: yes
+    create_home: true
+    system: true
     state: "present"
   tags:
     - "jenkins_install"
@@ -28,7 +28,7 @@
       - "fontconfig"
       - "openjdk-21-jre"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "jenkins_install"
 
@@ -36,7 +36,7 @@
   template:
     src: "jenkins.service.j2"
     dest: "/etc/systemd_service/system/jenkins.service"
-    force: yes
+    force: true
     owner: "root"
     group: "root"
     mode: "0644"
@@ -47,8 +47,8 @@
   systemd_service:
     name: "jenkins"
     state: "restarted"
-    daemon_reload: yes
-    enabled: yes
+    daemon_reload: true
+    enabled: true
   tags:
     - "jenkins_install"
     - "jenkins_update"

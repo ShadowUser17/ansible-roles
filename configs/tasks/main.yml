@@ -6,7 +6,7 @@
   get_url:
     url: "https://raw.githubusercontent.com/ShadowUser17/BasicInstalls/master/user/tmux.conf"
     dest: "/root/.tmux.conf"
-    force: yes
+    force: true
     owner: "root"
     group: "root"
     mode: "0644"

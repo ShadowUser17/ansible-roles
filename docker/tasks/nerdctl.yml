@@ -11,7 +11,7 @@
     src: "{{ nerdctl_file }}"
     dest: "/usr/local/bin/"
     include: ["nerdctl"]
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
   tags:
     - "nerdctl"

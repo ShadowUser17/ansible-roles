@@ -7,7 +7,7 @@
       - "lsb-release"
       - "curl"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "containerd"
     - "docker"
@@ -32,7 +32,7 @@
   apt:
     pkg: "containerd.io"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "containerd"
     - "docker"
@@ -45,6 +45,6 @@
       - "docker-buildx-plugin"
       - "docker-compose-plugin"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "docker"

@@ -5,9 +5,9 @@
     dest: "/root/templates"
     version: "master"
     key_file: "~/.ssh/git_ssh_key"
-    force: yes
-    clone: yes
-    accept_hostkey: yes
+    force: true
+    clone: true
+    accept_hostkey: true
   tags:
     - "docker_templates"
 
@@ -17,8 +17,8 @@
     dest: "/root/{{ repo_dir }}"
     version: "{{ repo_branch }}"
     key_file: "~/.ssh/git_ssh_key"
-    force: yes
-    clone: yes
-    accept_hostkey: yes
+    force: true
+    clone: true
+    accept_hostkey: true
   tags:
     - "clone_repo"

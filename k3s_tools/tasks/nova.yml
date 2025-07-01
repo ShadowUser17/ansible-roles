@@ -13,8 +13,8 @@
     src: "{{ nova_file }}"
     dest: "/usr/local/bin/"
     include: ["nova"]
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
   tags:
     - "nova"
     - "k3s_tools"

@@ -3,7 +3,7 @@
   dnf:
     name: "dnf-plugins-core"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "wazuh_agent"
 
@@ -25,7 +25,7 @@
   dnf:
     name: "wazuh-agent"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "wazuh_agent"
 
@@ -33,7 +33,7 @@
   systemd_service:
     name: "wazuh-agent"
     state: "stopped"
-    daemon_reload: yes
-    enabled: no
+    daemon_reload: true
+    enabled: false
   tags:
     - "wazuh_agent"

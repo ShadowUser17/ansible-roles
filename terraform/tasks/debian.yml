@@ -8,7 +8,7 @@
       - "gnupg"
       - "curl"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "hashicorp_repo"
 
@@ -30,6 +30,6 @@
   apt:
     pkg: "terraform"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "terraform"

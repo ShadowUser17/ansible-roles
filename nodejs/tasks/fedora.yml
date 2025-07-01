@@ -16,6 +16,6 @@
   dnf:
     name: "nodejs"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "nodejs"

@@ -3,7 +3,7 @@
   apt:
     pkg: "nfs-kernel-server"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "nfs"
   when:
@@ -13,7 +13,7 @@
   dnf:
     name: "nfs-utils"
     state: "present"
-    update_cache: yes
+    update_cache: true
   tags:
     - "nfs"
   when:
@@ -33,7 +33,7 @@
   template:
     src: "exports.j2"
     dest: "/etc/exports"
-    force: yes
+    force: true
     owner: "root"
     group: "root"
     mode: "0644"
@@ -44,6 +44,6 @@
   systemd_service:
     name: "nfs-server"
     state: "started"
-    enabled: yes
+    enabled: true
   tags:
     - "nfs"

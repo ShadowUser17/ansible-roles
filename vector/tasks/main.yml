@@ -37,7 +37,7 @@
   copy:
     src: "vector.service"
     dest: "/usr/lib/systemd_service/system/vector.service"
-    force: yes
+    force: true
     owner: "root"
     group: "root"
     mode: "0644"

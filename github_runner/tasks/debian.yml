@@ -5,8 +5,8 @@
     home: "{{ runner_base_dir }}/{{ runner_user }}"
     shell: "/sbin/nologin"
     groups: "docker"
-    create_home: yes
-    system: yes
+    create_home: true
+    system: true
     state: "present"
   tags:
     - "runner_install"
@@ -28,8 +28,8 @@
     dest: "{{ runner_base_dir }}/{{ runner_user }}/"
     owner: "{{ runner_user }}"
     group: "{{ runner_user }}"
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
   tags:
     - "runner_install"
     - "runner_update"
@@ -47,7 +47,7 @@
   template:
     src: "runner.service.j2"
     dest: "/etc/systemd_service/system/github-runner.service"
-    force: yes
+    force: true
     owner: "root"
     group: "root"
     mode: "0644"
@@ -58,8 +58,8 @@
   systemd_service:
     name: "github-runner"
     state: "restarted"
-    daemon_reload: yes
-    enabled: yes
+    daemon_reload: true
+    enabled: true
   tags:
     - "runner_install"
     - "runner_update"

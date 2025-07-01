@@ -13,8 +13,8 @@
     src: "{{ helm_file }}"
     dest: "/tmp/"
     include: ["linux-amd64/helm"]
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
   tags:
     - "helm"
     - "k3s_tools"

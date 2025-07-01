@@ -12,8 +12,8 @@
   unarchive:
     src: "{{ tetragon_file }}"
     dest: "/tmp/"
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
     owner: "root"
     group: "root"
     mode: "0755"
@@ -67,8 +67,8 @@
     src: "{{ tetra_file }}"
     dest: "/usr/local/bin/"
     include: ["tetra"]
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
     owner: "root"
     group: "root"
     mode: "0755"

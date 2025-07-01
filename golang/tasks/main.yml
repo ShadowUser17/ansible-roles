@@ -67,8 +67,8 @@
     src: "{{ gosec_file }}"
     dest: "/usr/local/bin/"
     include: ["gosec"]
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
   tags:
     - "gosec"
     - "golang-env"

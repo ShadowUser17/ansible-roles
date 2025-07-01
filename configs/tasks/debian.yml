@@ -3,7 +3,7 @@
   get_url:
     url: "https://raw.githubusercontent.com/ShadowUser17/BasicInstalls/master/user/debian_root_bashrc"
     dest: "/root/.bashrc"
-    force: yes
+    force: true
     owner: "root"
     group: "root"
     mode: "0644"

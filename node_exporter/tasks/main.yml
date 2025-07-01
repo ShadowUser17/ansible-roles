@@ -12,8 +12,8 @@
     src: "{{ node_exporter_file }}"
     dest: "/tmp/"
     include: ["node_exporter-{{ node_exporter }}.linux-amd64/node_exporter"]
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
     owner: "root"
     group: "root"
   tags:
@@ -23,8 +23,8 @@
   copy:
     src: "/tmp/node_exporter-{{ node_exporter }}.linux-amd64/node_exporter"
     dest: "/usr/local/bin/node_exporter"
-    remote_src: yes
-    force: yes
+    remote_src: true
+    force: true
     owner: "root"
     group: "root"
     mode: "0755"
@@ -42,7 +42,7 @@
   copy:
     src: "node-exporter.service"
     dest: "/etc/systemd_service/system/"
-    force: yes
+    force: true
     owner: "root"
     group: "root"
     mode: "0644"
@@ -53,7 +53,7 @@
   systemd_service:
     name: "node-exporter"
     state: "restarted"
-    enabled: yes
-    daemon_reload: yes
+    enabled: true
+    daemon_reload: true
   tags:
     - "node_exporter"

@@ -11,8 +11,8 @@
   unarchive:
     src: "{{ istio_file }}"
     dest: "/tmp/"
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
     owner: "root"
     group: "root"
   tags:

@@ -12,8 +12,8 @@
     src: "{{ flux_file }}"
     dest: "/usr/local/bin/"
     include: ["flux"]
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
     owner: "root"
     group: "root"
   tags:

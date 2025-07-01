@@ -12,8 +12,8 @@
   unarchive:
     src: "{{ aws_cli_file }}"
     dest: "{{ aws_cli_dest }}"
-    keep_newer: yes
-    remote_src: yes
+    keep_newer: true
+    remote_src: true
     owner: "root"
     group: "root"
   tags:
