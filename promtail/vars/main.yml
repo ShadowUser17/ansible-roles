@@ -1,0 +1,4 @@
+---
+promtail_version: "3.5.1"
+promtail_client: ""
+promtail_base_name: "/root/promtail_amd64"

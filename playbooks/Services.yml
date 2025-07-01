@@ -11,6 +11,7 @@
     - "docker"
     - "jenkins"
     - "freeipa"
+    - "promtail"
     - "tetragon"
     - "wazuh_agent"
     - "node_exporter"

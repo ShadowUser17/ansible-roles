@@ -1,0 +1,34 @@
+---
+- name: "Download promtail deb..."
+  get_url:
+    url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail_{{ promtail_version }}_amd64.deb"
+    dest: "{{ promtail_base_name }}.deb"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "promtail"
+
+- name: "Install promtail deb..."
+  shell: "dpkg -i {{ promtail_base_name }}.deb"
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "promtail"
+
+- name: "Download promtail rpm..."
+  get_url:
+    url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-{{ promtail_version }}.x86_64.rpm"
+    dest: "{{ promtail_base_name }}.rpm"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "promtail"
+
+- name: "Install promtail rpm..."
+  shell: "rpm -U {{ promtail_base_name }}.rpm"
+  when: "ansible_facts['os_family']|lower == 'redhat'"
+  tags:
+    - "promtail"
