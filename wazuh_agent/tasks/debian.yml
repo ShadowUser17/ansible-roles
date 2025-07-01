@@ -32,3 +32,12 @@
     update_cache: yes
   tags:
     - "wazuh_agent"
+
+- name: "Disable service..."
+  systemd:
+    name: "wazuh-agent"
+    state: "stopped"
+    daemon_reload: yes
+    enabled: no
+  tags:
+    - "wazuh_agent"
