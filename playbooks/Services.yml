@@ -13,6 +13,7 @@
     - "freeipa"
     - "promtail"
     - "tetragon"
+    - "syslog_ng"
     - "wazuh_agent"
     - "node_exporter"
     - "github_runner"
