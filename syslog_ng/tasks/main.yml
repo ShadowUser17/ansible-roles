@@ -1,17 +1,17 @@
 ---
+- name: "Disable rsyslog..."
+  systemd_service:
+    name: "rsyslog"
+    state: "stopped"
+    enabled: false
+  ignore_errors: true
+  tags:
+    - "syslog_ng"
+
 - name: "Remove rsyslog..."
   apt:
     pkg: "rsyslog"
     state: "absent"
-  when: "ansible_facts['os_family']|lower == 'debian'"
-  tags:
-    - "syslog_ng"
-
-- name: "Install syslog-ng..."
-  apt:
-    pkg: "syslog-ng"
-    state: "present"
-    update_cache: true
   when: "ansible_facts['os_family']|lower == 'debian'"
   tags:
     - "syslog_ng"
@@ -25,6 +25,15 @@
     - "syslog_ng"
 
 - name: "Install syslog-ng..."
+  apt:
+    pkg: "syslog-ng"
+    state: "present"
+    update_cache: true
+  when: "ansible_facts['os_family']|lower == 'debian'"
+  tags:
+    - "syslog_ng"
+
+- name: "Install syslog-ng..."
   dnf:
     name: "syslog-ng"
     state: "present"
@@ -33,7 +42,7 @@
   tags:
     - "syslog_ng"
 
-- name: "Enable service..."
+- name: "Enable syslog-ng..."
   systemd_service:
     name: "syslog-ng"
     state: "started"
