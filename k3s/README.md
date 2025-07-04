@@ -56,7 +56,7 @@ kubectl taint node <server_node> "node-role.kubernetes.io/control-plane:NoSchedu
 
 #### Configure kubectl:
 ```bash
-mkdir ~/.kube && scp k3s-server:/etc/rancher/k3s/k3s.yaml ~/.kube/ && \
-sed 's/127\.0\.0\.1/192\.168\.56\.11/g' ~/.kube/k3s.yaml > ~/.kube/config && \
+mkdir ~/.kube && scp vm-102:/etc/rancher/k3s/k3s.yaml ~/.kube/ && \
+sed 's/127\.0\.0\.1/192\.168\.56\.12/g' ~/.kube/k3s.yaml > ~/.kube/config && \
 chmod 600 ~/.kube/config && rm -f ~/.kube/k3s.yaml
 ```
