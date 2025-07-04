@@ -1,0 +1,34 @@
+---
+- name: "Install dependencies..."
+  apt:
+    pkg:
+      - "apt-transport-https"
+      - "ca-certificates"
+      - "lsb-release"
+      - "curl"
+    state: "present"
+    update_cache: true
+  tags:
+    - "tor"
+
+- name: "Add repository key..."
+  apt_key:
+    url: "https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886D8FFF.asc"
+    state: "present"
+  tags:
+    - "tor"
+
+- name: "Add repository..."
+  apt_repository:
+    repo: "deb https://deb.torproject.org/torproject.org {{ ansible_facts['lsb']['codename'] }} main"
+    state: "present"
+  tags:
+    - "tor"
+
+- name: "Install tor..."
+  apt:
+    pkg: "tor"
+    state: "present"
+    update_cache: true
+  tags:
+    - "tor"

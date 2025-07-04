@@ -6,12 +6,13 @@ all:
   children:
     qemu:
       hosts:
-        testing:
-        vm-110:
-        vm-111:
-        vm-112:
-        vm-113:
+        vm-100:
+        vm-101:
+        vm-102:
+        vm-103:
     k3s:
       hosts:
-        k3s-server:
-
+        vm-102:
+    ipa:
+      hosts:
+        vm-103:

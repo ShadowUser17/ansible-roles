@@ -6,6 +6,7 @@
   roles:
     - "nfs"
     - "k3s"
+    - "tor"
     - "nginx"
     - "vector"
     - "docker"
