@@ -32,7 +32,7 @@
 
 #### Deploy K3S server:
 ```bash
-./env/bin/ansible-playbook -i Home.yml -l k3s-server -t k3s_server playbooks/Services.yml
+./env/bin/ansible-playbook -i Home.yml -l <host> -t k3s_server playbooks/Services.yml
 ```
 ```bash
 kubectl taint node <server_node> "node-role.kubernetes.io/master:NoSchedule"
@@ -43,15 +43,15 @@ kubectl taint node <server_node> "node-role.kubernetes.io/control-plane:NoSchedu
 
 #### Deploy K3S server with Cilium:
 ```bash
-./env/bin/ansible-playbook -i Home.yml -l k3s-server -t k3s_network_none playbooks/Services.yml
+./env/bin/ansible-playbook -i Home.yml -l <host> -t k3s_network_none playbooks/Services.yml
 ```
 ```bash
-./env/bin/ansible-playbook -i Home.yml -l k3s-server -t "k3s_config,cilium" playbooks/Services.yml
+./env/bin/ansible-playbook -i Home.yml -l <host> -t "k3s_config,cilium" playbooks/Services.yml
 ```
 
 #### Deploy K3S agents:
 ```bash
-./env/bin/ansible-playbook -i Home.yml -l k3s-agents -t k3s_agent playbooks/Services.yml
+./env/bin/ansible-playbook -i Home.yml -l <host> -t k3s_agent playbooks/Services.yml
 ```
 
 #### Configure kubectl:
