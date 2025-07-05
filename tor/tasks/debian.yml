@@ -13,7 +13,7 @@
 
 - name: "Add repository key..."
   apt_key:
-    url: "https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc"
+    url: "https://deb.torproject.org/torproject.org/{{ tor_repo_key }}.asc"
     state: "present"
   tags:
     - "tor"
@@ -32,5 +32,24 @@
       - "deb.torproject.org-keyring"
     state: "present"
     update_cache: true
+  tags:
+    - "tor"
+
+- name: "Update config..."
+  template:
+    src: "torrc.j2"
+    dest: "/etc/tor/torrc"
+    force: true
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  tags:
+    - "tor"
+
+- name: "Enable service..."
+  systemd_service:
+    name: "tor"
+    state: "restarted"
+    enabled: true
   tags:
     - "tor"
