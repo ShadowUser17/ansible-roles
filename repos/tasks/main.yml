@@ -2,9 +2,9 @@
 - name: "Clone DockerTemplates repo..."
   git:
     repo: "git@github.com:ShadowUser17/DockerTemplates.git"
-    dest: "/root/templates"
-    version: "master"
-    key_file: "~/.ssh/git_ssh_key"
+    dest: "~/templates"
+    version: "{{ repo_branch }}"
+    key_file: "{{ repo_dst_key }}"
     force: true
     clone: true
     accept_hostkey: true
@@ -14,11 +14,19 @@
 - name: "Clone repo: {{ repo_url }}"
   git:
     repo: "{{ repo_url }}"
-    dest: "/root/{{ repo_dir }}"
+    dest: "~/{{ repo_dir }}"
     version: "{{ repo_branch }}"
-    key_file: "~/.ssh/git_ssh_key"
+    key_file: "{{ repo_dst_key }}"
     force: true
     clone: true
     accept_hostkey: true
   tags:
     - "clone_repo"
+
+- name: "Create {{ repo_dst_key }}"
+  copy:
+    src: "{{ repo_src_key }}"
+    dest: "{{ repo_dst_key }}"
+    mode: "0600"
+  tags:
+    - "add_repo_key"
