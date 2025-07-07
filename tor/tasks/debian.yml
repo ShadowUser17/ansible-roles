@@ -48,7 +48,7 @@
 
 - name: "Enable service..."
   systemd_service:
-    name: "tor"
+    name: "tor@default"
     state: "restarted"
     enabled: true
   tags:
