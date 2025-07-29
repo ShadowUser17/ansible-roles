@@ -1,12 +1,12 @@
 ---
-helm: "3.18.3"
+helm: "3.18.4"
 helm_file: "/root/helm-linux-amd64.tgz"
 
-nova: "3.11.4"
+nova: "3.11.6"
 nova_file: "/root/nova-linux-amd64.tgz"
 
-kubeshark: "52.7.8"
+kubeshark: "52.8.0"
 kubeshark_file: "/usr/local/bin/kubeshark"
 
-kubescape: "3.0.34"
+kubescape: "3.0.37"
 kubescape_file: "/usr/local/bin/kubescape"
