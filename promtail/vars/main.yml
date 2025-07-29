@@ -1,4 +1,4 @@
 ---
-promtail_version: "3.5.1"
+promtail_version: "3.5.3"
 promtail_client: "http://grafana-loki.k3s/loki/api/v1/push"
 promtail_base_name: "/root/promtail_amd64"
