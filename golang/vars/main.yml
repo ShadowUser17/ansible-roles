@@ -4,8 +4,8 @@ golang_version: "1.24.5"
 gobrew_version: "1.10.12"
 gobrew_file: "/usr/local/bin/gobrew"
 
-golint_version: "2.2.1"
+golint_version: "2.3.0"
 golint_base_name: "/root/golangci-lint-linux-amd64"
 
-gosec_version: "2.22.5"
+gosec_version: "2.22.7"
 gosec_file: "/root/gosec_linux_amd64.tar.gz"
