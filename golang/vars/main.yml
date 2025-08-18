@@ -1,5 +1,5 @@
 ---
-golang_version: "1.24.5"
+golang_version: "1.24.6"
 
 gobrew_version: "1.10.12"
 gobrew_file: "/usr/local/bin/gobrew"
