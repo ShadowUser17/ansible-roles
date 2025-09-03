@@ -10,6 +10,8 @@ all:
         vm-101:
         vm-102:
         vm-103:
+        vm-110:
+        vm-111:
     k3s:
       hosts:
         vm-102:
