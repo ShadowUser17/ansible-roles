@@ -8,15 +8,10 @@ all:
       hosts:
         vm-100:
         vm-101:
-        vm-102:
-        vm-103:
-        vm-104:
-        vm-110:
-        vm-111:
     k3s:
       hosts:
-        vm-102:
-    ipa:
-      hosts:
-        vm-103:
-        vm-104:
+        vm-101:
+    # ipa:
+    #   hosts:
+    #     vm-102:
+    #     vm-103:
