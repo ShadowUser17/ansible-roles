@@ -2,9 +2,7 @@
 - name: "Install dependencies..."
   apt:
     pkg:
-      - "apt-transport-https"
       - "ca-certificates"
-      - "lsb-release"
       - "curl"
     state: "present"
     update_cache: true
@@ -12,18 +10,42 @@
     - "containerd"
     - "docker"
 
+- name: "Create keyrings directory..."
+  file:
+    path: "/etc/apt/keyrings"
+    state: "directory"
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  tags:
+    - "containerd"
+    - "docker"
+
 - name: "Add repository key..."
-  apt_key:
+  get_url:
     url: "https://download.docker.com/linux/debian/gpg"
-    state: "present"
+    dest: "/etc/apt/keyrings/docker.asc"
+    owner: "root"
+    group: "root"
+    mode: "0644"
   tags:
     - "containerd"
     - "docker"
 
 - name: "Add repository..."
-  apt_repository:
-    repo: "deb https://download.docker.com/linux/debian {{ ansible_facts['lsb']['codename'] }} stable"
-    state: "present"
+  copy:
+    dest: "/etc/apt/sources.list.d/docker.sources"
+    content: |
+      Types: deb
+      URIs: https://download.docker.com/linux/debian
+      Suites: {{ ansible_distribution_release }}
+      Components: stable
+      Architectures: {{ 'amd64' if ansible_architecture == 'x86_64' else 'arm64' }}
+      Signed-By: /etc/apt/keyrings/docker.asc
+    owner: "root"
+    group: "root"
+    mode: '0644'
+    force: true
   tags:
     - "containerd"
     - "docker"
